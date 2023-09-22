@@ -33,10 +33,27 @@ header .right__section a {
   text-decoration: none;
 }
 
-main {
+main section#home {
   background: linear-gradient(to right, rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)), url("../img/background2.jpg");
   background-size: cover;
   height: calc(100vh - 70px);
+}
+main section#home .hero__container {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main section#home .hero__container .name h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 700;
+}
+main section#home .hero__container .sub pre {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 footer {
