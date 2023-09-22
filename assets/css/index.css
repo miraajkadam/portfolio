@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header__common {
+  padding: 20px;
+}
+header .left__section {
+  display: flex;
+  align-items: center;
+}
+header .left__section span {
+  font-weight: 600;
+}
+header .left__section img {
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+header .right__section a {
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+main {
+  background: linear-gradient(to right, rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)), url("../img/background2.jpg");
+  background-size: cover;
+  height: calc(100vh - 70px);
+}
+
+footer {
+  background: green;
+  height: 200px;
+}/*# sourceMappingURL=index.css.map */
