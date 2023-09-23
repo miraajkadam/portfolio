@@ -11,7 +11,7 @@ $black: #010101;
 }
 
 body {
-  font-family: 'Poppins';
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
   color: $black;
 }
 
@@ -44,6 +44,8 @@ header {
     a {
       margin: 0 15px;
       text-decoration: none;
+      font-weight: 600;
+      color: inherit;
     }
   }
 }
@@ -119,10 +121,55 @@ main {
         }
       }
     }
+
+    .hero__mouse {
+      position: absolute;
+      bottom: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .mouse {
+        width: 25px;
+        height: 40px;
+        border: 2px solid $black;
+        border-radius: 60px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          position: absolute;
+          top: 7px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: $black;
+          border-radius: 50%;
+          opacity: 1;
+          animation: wheel 1.3s infinite;
+          -webkit-animation: wheel 1.3s infinite;
+        }
+      }
+    }
   }
 }
 
 footer {
   background: green;
   height: 200px;
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 27px;
+  }
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 27px;
+  }
 }
