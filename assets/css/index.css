@@ -141,6 +141,33 @@ main #about .left__container {
 main #about .right__container {
   width: 30%;
 }
+main #about .dev__toolkit__container {
+  background-color: #fefefe;
+}
+main #about .dev__toolkit__container .underline {
+  height: 4px;
+  width: 10%;
+  background-color: #ffc715;
+}
+main #about .dev__toolkit__container .toolkits {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3rem 4rem;
+}
+main #about .dev__toolkit__container .toolkits .toolkit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #about .dev__toolkit__container .toolkits .toolkit img {
+  height: 5rem;
+  width: 5rem;
+}
+main #about .dev__toolkit__container .toolkits .toolkit sub {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
   height: 200px;
 }
 @keyframes wheel {

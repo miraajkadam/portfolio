@@ -179,6 +179,38 @@ main {
       width: 30%;
     }
 
+    .dev__toolkit__container {
+      background-color: #fefefe;
+
+      .underline {
+        height: 4px;
+        width: 10%;
+        background-color: $yellow;
+      }
+
+      .toolkits {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 3rem 4rem;
+
+        .toolkit {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          img {
+            height: 5rem;
+            width: 5rem;
+          }
+
+          sub {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
   height: 200px;
 }
 
