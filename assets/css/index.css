@@ -232,6 +232,25 @@ footer {
 footer img {
   height: 2rem;
 }
+
+.color__palette div {
+  height: 200px;
+}
+.color__palette .dark__grey {
+  background: #292929;
+}
+.color__palette .grey {
+  background: #585858;
+}
+.color__palette .yellow {
+  background: #ffc715;
+}
+.color__palette .white {
+  background: #fefefe;
+}
+.color__palette .black {
+  background: #010101;
+}
 @keyframes wheel {
   to {
     opacity: 0;

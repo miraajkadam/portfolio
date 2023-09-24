@@ -300,6 +300,32 @@ footer {
   }
 }
 
+.color__palette {
+  div {
+    height: 200px;
+  }
+
+  .dark__grey {
+    background: $dark__grey;
+  }
+
+  .grey {
+    background: $grey;
+  }
+
+  .yellow {
+    background: $yellow;
+  }
+
+  .white {
+    background: $white;
+  }
+
+  .black {
+    background: $black;
+  }
+}
+
 @-webkit-keyframes wheel {
   to {
     opacity: 0;
