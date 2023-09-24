@@ -133,16 +133,16 @@ main #home .hero__mouse .mouse::before {
   animation: wheel 1.3s infinite;
   -webkit-animation: wheel 1.3s infinite;
 }
-main #about .content__container {
+main .content__container {
   padding: 2rem 7rem;
 }
-main #about .content__container .underline {
+main .content__container .underline {
   height: 4px;
   width: 10%;
   background-color: #ffc715;
 }
 main #about .about__content {
-  background: #fafafa;
+  background: #fbfbfb;
   padding: 9rem 7rem;
 }
 main #about .left__container {
@@ -153,7 +153,7 @@ main #about .right__container {
   width: 30%;
 }
 main #about .dev__toolkit__container {
-  background-color: #fefefe;
+  background-color: #fdfdfd;
 }
 main #about .dev__toolkit__container .underline {
   height: 4px;
@@ -207,7 +207,24 @@ main #about .skills__over__container .skills__container .skill__content .skills 
 main #about .skills__over__container .skills__container .skill__content .skills .skills__skill:hover {
   background: rgba(153, 153, 153, 0.3);
 }
-
+main #projects .projects__container {
+  background-color: #fdfdfd;
+}
+main #projects .projects__container .projects {
+  padding: 2rem 7rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+main #projects .projects__container .projects .projects__project {
+  border: 1px solid;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
 footer {
   background: #ffc715;
   height: 200px;
