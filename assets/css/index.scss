@@ -153,10 +153,32 @@ main {
       }
     }
   }
-}
 
-footer {
-  background: green;
+  #about {
+    .content__container {
+      padding: 2rem 7rem;
+
+      .underline {
+        height: 4px;
+        width: 10%;
+        background-color: $yellow;
+      }
+    }
+
+    .about__content {
+      background: #fafafa;
+      padding: 9rem 7rem;
+    }
+
+    .left__container {
+      width: 70%;
+      padding: 3rem 4rem;
+    }
+
+    .right__container {
+      width: 30%;
+    }
+
   height: 200px;
 }
 

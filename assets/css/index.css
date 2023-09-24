@@ -122,9 +122,25 @@ main section#home .hero__mouse .mouse::before {
   animation: wheel 1.3s infinite;
   -webkit-animation: wheel 1.3s infinite;
 }
-
-footer {
-  background: green;
+main #about .content__container {
+  padding: 2rem 7rem;
+}
+main #about .content__container .underline {
+  height: 4px;
+  width: 10%;
+  background-color: #ffc715;
+}
+main #about .about__content {
+  background: #fafafa;
+  padding: 9rem 7rem;
+}
+main #about .left__container {
+  width: 70%;
+  padding: 3rem 4rem;
+}
+main #about .right__container {
+  width: 30%;
+}
   height: 200px;
 }
 @keyframes wheel {
