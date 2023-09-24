@@ -13,6 +13,17 @@ $black: #010101;
 body {
   font-family: 'Poppins', 'Times New Roman', Times, serif;
   color: $black;
+  background-color: $white;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 header {
@@ -51,7 +62,7 @@ header {
 }
 
 main {
-  section#home {
+  #home {
     background: linear-gradient(to right, rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)),
       url('../img/background2.jpg');
     background-size: cover;
@@ -211,7 +222,50 @@ main {
         }
       }
     }
+
+    .skills__over__container {
+      background-color: #fff;
+
+      .skills__container {
+        .skill__content {
+          padding: 1rem 4rem;
+
+          .skills {
+            padding: 1rem 4rem;
+            display: flex;
+            flex-wrap: wrap;
+
+            .skills__skill {
+              padding: 0.5rem 1rem;
+              margin-bottom: 0.3rem;
+              margin-right: 0.3rem;
+              font-size: 0.7rem;
+              background: rgba(153, 153, 153, 0.2);
+              border-radius: 5px;
+              font-weight: 600;
+              color: #666;
+              width: fit-content;
+              cursor: default;
+              transition: background 0.001s;
+
+              &:hover {
+                background: rgba(153, 153, 153, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: $yellow;
   height: 200px;
+
+  img {
+    height: 2rem;
+  }
 }
 
 @-webkit-keyframes wheel {
