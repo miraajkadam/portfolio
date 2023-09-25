@@ -213,18 +213,27 @@ main #projects .projects__container {
 main #projects .projects__container .projects {
   padding: 2rem 7rem;
   display: grid;
-  grid-template-columns: auto auto auto;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
-  row-gap: 30px;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+  grid-auto-rows: 20px;
 }
 main #projects .projects__container .projects .projects__project {
+  padding: 1rem;
   border: 1px solid;
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
   box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
+main #projects .projects__container .projects .projects__project .project__img {
+  height: 150px;
+}
+main #projects .projects__container .projects .projects__project .project__text {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 footer {
   background: #ffc715;
   height: 200px;
@@ -238,6 +247,7 @@ footer img {
 }
 .color__palette .dark__grey {
   background: #292929;
+  color: #fefefe;
 }
 .color__palette .grey {
   background: #585858;
