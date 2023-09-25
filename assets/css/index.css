@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -214,24 +218,33 @@ main #projects .projects__container .projects {
   padding: 2rem 7rem;
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
-  grid-auto-rows: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 main #projects .projects__container .projects .projects__project {
+  cursor: pointer;
   padding: 1rem;
   border: 1px solid;
-  width: 400px;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  transition: transform 0.2s;
 }
 main #projects .projects__container .projects .projects__project .project__img {
   height: 150px;
+  width: 400px;
 }
 main #projects .projects__container .projects .projects__project .project__text {
   height: -moz-fit-content;
   height: fit-content;
+}
+main #projects .projects__container .projects .projects__project .project__text h6 {
+  font-size: 0.9rem;
+}
+main #projects .projects__container .projects .projects__project:hover {
+  transform: translateY(-5px);
 }
 
 footer {
