@@ -225,7 +225,6 @@ main #projects .projects__container .projects {
 }
 main #projects .projects__container .projects .projects__project {
   cursor: pointer;
-  padding: 1rem;
   border: 1px solid;
   width: -moz-fit-content;
   width: fit-content;
@@ -236,10 +235,19 @@ main #projects .projects__container .projects .projects__project {
   transition: transform 0.2s;
 }
 main #projects .projects__container .projects .projects__project .project__img {
-  height: 150px;
-  width: 400px;
+  height: 200px;
+  width: 100%;
+}
+main #projects .projects__container .projects .projects__project .project__img img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 main #projects .projects__container .projects .projects__project .project__text {
+  padding: 1rem;
   height: -moz-fit-content;
   height: fit-content;
 }

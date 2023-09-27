@@ -281,7 +281,6 @@ main {
 
         .projects__project {
           cursor: pointer;
-          padding: 1rem;
           border: 1px solid;
           width: -webkit-fit-content;
           width: -moz-fit-content;
@@ -293,11 +292,24 @@ main {
           border-radius: 10px;
           transition: transform 0.2s;
           .project__img {
-            height: 150px;
-            width: 400px;
+            height: 200px;
+            width: 100%;
+
+            img {
+              width: inherit;
+              height: inherit;
+              object-fit: cover;
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+            }
+
+            // img:nth-child(2) {
+            //   height: 200px;
+            // }
           }
 
           .project__text {
+            padding: 1rem;
             height: -webkit-fit-content;
             height: -moz-fit-content;
             height: fit-content;
