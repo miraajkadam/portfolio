@@ -260,6 +260,9 @@ main #projects .projects__container .projects .projects__project .project__text 
 main #projects .projects__container .projects .projects__project:hover {
   transform: translateY(-5px);
 }
+main #certifications .certifications__container .certifications__content .certificate a img {
+  width: 400px;
+}
 
 footer {
   background: #ffc715;

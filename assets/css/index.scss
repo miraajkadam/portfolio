@@ -330,6 +330,20 @@ main {
       }
     }
   }
+
+  #certifications {
+    .certifications__container {
+      .certifications__content {
+        .certificate {
+          a {
+            img {
+              width: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 footer {
