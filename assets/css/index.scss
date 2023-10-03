@@ -64,6 +64,10 @@ header {
     a {
       margin: 0 15px;
       font-weight: 600;
+
+      &:last-child {
+        text-transform: uppercase;
+      }
     }
   }
 }

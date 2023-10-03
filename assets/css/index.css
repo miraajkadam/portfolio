@@ -53,6 +53,9 @@ header .right__section a {
   margin: 0 15px;
   font-weight: 600;
 }
+header .right__section a:last-child {
+  text-transform: uppercase;
+}
 
 main #home {
   background: linear-gradient(to right, rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)), url("../img/background2.jpg");
