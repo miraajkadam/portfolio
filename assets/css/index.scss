@@ -295,6 +295,7 @@ main {
           box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
           border-radius: 10px;
           transition: transform 0.2s;
+
           .project__img {
             height: 200px;
             width: 100%;
@@ -334,11 +335,33 @@ main {
   #certifications {
     .certifications__container {
       .certifications__content {
+        padding: 2rem 7rem;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
         .certificate {
+          cursor: pointer;
+          border: 1px solid;
+          width: -webkit-fit-content;
+          width: -moz-fit-content;
+          width: fit-content;
+          height: -webkit-fit-content;
+          height: -moz-fit-content;
+          height: fit-content;
+          box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+          transition: transform 0.2s;
+
           a {
             img {
               width: 400px;
+              border-radius: 10px;
             }
+          }
+
+          &:hover {
+            transform: translateY(-5px);
           }
         }
       }
