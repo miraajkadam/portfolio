@@ -285,12 +285,42 @@ main #certifications .certifications__container .certifications__content .certif
   transform: translateY(-5px);
 }
 
-footer {
+.footer__separator {
   background: #ffc715;
-  height: 200px;
+  height: 20px;
 }
-footer img {
-  height: 2rem;
+
+footer {
+  background: #010101;
+  height: 200px;
+  color: #fefefe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .socials__icons {
+  height: 35px;
+  display: flex;
+}
+footer .socials__icons .social__icon {
+  background: #010101;
+  border-radius: 5px;
+  margin: 5px;
+}
+footer .socials__icons .social__icon a {
+  height: 25px;
+  width: 25px;
+  display: block;
+}
+footer .socials__icons .social__icon a svg {
+  height: 25px;
+}
+footer .socials__icons .social__icon:hover {
+  color: #ffc715;
+}
+footer .footer__sign {
+  margin-top: 5px;
 }
 
 .color__palette div {

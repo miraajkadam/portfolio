@@ -369,12 +369,47 @@ main {
   }
 }
 
-footer {
+.footer__separator {
   background: $yellow;
-  height: 200px;
+  height: 20px;
+}
 
-  img {
-    height: 2rem;
+footer {
+  background: $black;
+  height: 200px;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .socials__icons {
+    height: 35px;
+    display: flex;
+
+    .social__icon {
+      background: $black;
+      border-radius: 5px;
+      margin: 5px;
+
+      a {
+        height: 25px;
+        width: 25px;
+        display: block;
+
+        svg {
+          height: 25px;
+        }
+      }
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  .footer__sign {
+    margin-top: 5px;
   }
 }
 
