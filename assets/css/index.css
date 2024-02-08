@@ -264,20 +264,21 @@ main #certifications .certifications__container .certifications__content {
   padding: 2rem 7rem;
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  justify-content: center;
 }
 main #certifications .certifications__container .certifications__content .certificate {
   cursor: pointer;
   border: 1px solid;
   width: -moz-fit-content;
   width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 267px;
   box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   transition: transform 0.2s;
 }
 main #certifications .certifications__container .certifications__content .certificate a img {
+  height: 267px;
   width: 400px;
   border-radius: 10px;
 }
