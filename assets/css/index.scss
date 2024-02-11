@@ -1,3 +1,23 @@
+$breakpoints: (
+  xxs: 480px,
+  xs: 768px,
+  sm: 991px,
+  md: 1280px,
+  lg: 1920px,
+  xl: 5000px,
+);
+
+@mixin break($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint);
+    @media screen and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}.";
+  }
+}
+
 // Color palette
 $dark__grey: #292929;
 $grey: #585858;
@@ -118,6 +138,14 @@ main {
           }
         }
       }
+
+      @include break(sm) {
+        display: none;
+      }
+
+      @media screen and (max-height: 450px) {
+        display: none;
+      }
     }
 
     .hero__container {
@@ -181,8 +209,31 @@ main {
 
     .underline {
       height: 4px;
-      width: 10%;
       background-color: $yellow;
+
+      @include break(md) {
+        width: 10%;
+      }
+
+      @include break(sm) {
+        width: 10%;
+      }
+
+      @include break(xs) {
+        width: 10%;
+      }
+    }
+
+    @include break(md) {
+      padding: 2rem 5rem !important;
+    }
+
+    @include break(sm) {
+      padding: 2rem 3rem !important;
+    }
+
+    @include break(xs) {
+      padding: 2rem 1rem !important;
     }
   }
 
@@ -190,6 +241,10 @@ main {
     .about__content {
       background: #fbfbfb;
       padding: 9rem 7rem;
+
+      .underline {
+        width: 202px;
+      }
     }
 
     .left__container {
@@ -206,7 +261,7 @@ main {
 
       .underline {
         height: 4px;
-        width: 10%;
+        width: 300px;
         background-color: $yellow;
       }
 
@@ -223,19 +278,61 @@ main {
           img {
             height: 5rem;
             width: 5rem;
+
+            @include break(md) {
+              height: 4rem;
+              width: 4rem;
+            }
+
+            @include break(xs) {
+              height: 3.5rem;
+              width: 3.5rem;
+            }
           }
 
           sub {
             font-size: 1.3rem;
             margin-top: 1rem;
             font-weight: 500;
+
+            @include break(md) {
+              font-size: 0.9rem;
+            }
+
+            @include break(xs) {
+              font-size: 0.6rem;
+            }
           }
+        }
+
+        @include break(md) {
+          padding: 1rem 3rem;
+        }
+
+        @include break(sm) {
+          padding: 1rem 2rem;
+        }
+
+        @include break(xs) {
+          padding: 1rem 1rem;
+        }
+
+        @include break(xxs) {
+          padding: 1rem 0rem;
+          flex-wrap: wrap;
+          // flex: 1 1 80px;
+
+          // justify-content: space-evenly;
         }
       }
     }
 
     .skills__over__container {
       background-color: #fff;
+
+      .underline {
+        width: 182px;
+      }
 
       .skills__container {
         .skill__content {
@@ -265,6 +362,34 @@ main {
                 background: rgba(153, 153, 153, 0.3);
               }
             }
+
+            @include break(md) {
+              padding: 1rem 3rem;
+            }
+
+            @include break(sm) {
+              padding: 1rem 2rem;
+            }
+
+            @include break(xs) {
+              padding: 1rem 1rem;
+            }
+
+            @include break(xxs) {
+              padding: 1rem 0rem;
+            }
+          }
+
+          @include break(md) {
+            padding: 1rem 3rem;
+          }
+
+          @include break(sm) {
+            padding: 1rem 2rem;
+          }
+
+          @include break(xs) {
+            padding: 1rem 1rem;
           }
         }
       }
@@ -274,6 +399,10 @@ main {
   #projects {
     .projects__container {
       background-color: #fdfdfd;
+
+      .underline {
+        width: 172px;
+      }
 
       .projects {
         padding: 2rem 7rem;
@@ -327,6 +456,28 @@ main {
           &:hover {
             transform: translateY(-5px);
           }
+
+          @include break(xxs) {
+            width: 300px;
+          }
+        }
+
+        @include break(md) {
+          padding: 1rem 3rem;
+        }
+
+        @include break(sm) {
+          padding: 1rem 2rem;
+        }
+
+        @include break(xs) {
+          padding: 1rem 1rem;
+        }
+
+        @include break(xxs) {
+          padding: 1rem 0rem;
+          justify-items: center;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
       }
     }
@@ -334,8 +485,12 @@ main {
 
   #certifications {
     .certifications__container {
+      .underline {
+        width: 283px;
+      }
+
       .certifications__content {
-        padding: 2rem 7rem;
+        padding: 2rem 0;
         display: grid;
         grid-gap: 30px;
         grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
@@ -357,12 +512,29 @@ main {
               height: 267px;
               width: 400px;
               border-radius: 10px;
+
+              @include break(sm) {
+                width: 300px;
+                height: 200px;
+              }
             }
           }
 
           &:hover {
             transform: translateY(-5px);
           }
+
+          @include break(sm) {
+            height: 200px;
+          }
+        }
+
+        @include break(md) {
+          padding: 2rem 0;
+        }
+
+        @include break(sm) {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
         }
       }
     }
@@ -453,3 +625,54 @@ footer {
     top: 27px;
   }
 }
+
+// // Desktop container utility class:
+// .container {
+//   max-width: 1536px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: 0.5rem;
+//   padding-right: 0.5rem;
+// }
+
+// /* 2xl */
+// @media (max-width: 1536px) {
+//   .container {
+//     max-width: 1280px;
+//   }
+// }
+
+// /* xl */
+// @media (max-width: 1280px) {
+//   .container {
+//     max-width: 1024px;
+//   }
+// }
+
+// /* lg */
+// @media (max-width: 1024px) {
+//   .container {
+//     max-width: 768px;
+//   }
+// }
+
+// /* md */
+// @media (max-width: 768px) {
+//   .container {
+//     max-width: 640px;
+//   }
+// }
+
+// /* sm */
+// @media (max-width: 640px) {
+//   .container {
+//     max-width: 475px;
+//   }
+// }
+
+// /* xs */
+// @media (max-width: 475px) {
+//   .container {
+//     width: 100%;
+//   }
+// }

@@ -98,6 +98,16 @@ main #home .side__nav .socials a img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 991px) {
+  main #home .side__nav {
+    display: none;
+  }
+}
+@media screen and (max-height: 450px) {
+  main #home .side__nav {
+    display: none;
+  }
+}
 main #home .hero__container {
   width: 90%;
   position: absolute;
@@ -148,12 +158,44 @@ main .content__container {
 }
 main .content__container .underline {
   height: 4px;
-  width: 10%;
   background-color: #ffc715;
+}
+@media screen and (max-width: 1280px) {
+  main .content__container .underline {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 991px) {
+  main .content__container .underline {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .content__container .underline {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main .content__container {
+    padding: 2rem 5rem !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  main .content__container {
+    padding: 2rem 3rem !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .content__container {
+    padding: 2rem 1rem !important;
+  }
 }
 main #about .about__content {
   background: #fbfbfb;
   padding: 9rem 7rem;
+}
+main #about .about__content .underline {
+  width: 202px;
 }
 main #about .left__container {
   width: 70%;
@@ -167,7 +209,7 @@ main #about .dev__toolkit__container {
 }
 main #about .dev__toolkit__container .underline {
   height: 4px;
-  width: 10%;
+  width: 300px;
   background-color: #ffc715;
 }
 main #about .dev__toolkit__container .toolkits {
@@ -184,13 +226,59 @@ main #about .dev__toolkit__container .toolkits .toolkit img {
   height: 5rem;
   width: 5rem;
 }
+@media screen and (max-width: 1280px) {
+  main #about .dev__toolkit__container .toolkits .toolkit img {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #about .dev__toolkit__container .toolkits .toolkit img {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
 main #about .dev__toolkit__container .toolkits .toolkit sub {
   font-size: 1.3rem;
   margin-top: 1rem;
   font-weight: 500;
 }
+@media screen and (max-width: 1280px) {
+  main #about .dev__toolkit__container .toolkits .toolkit sub {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #about .dev__toolkit__container .toolkits .toolkit sub {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #about .dev__toolkit__container .toolkits {
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #about .dev__toolkit__container .toolkits {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #about .dev__toolkit__container .toolkits {
+    padding: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  main #about .dev__toolkit__container .toolkits {
+    padding: 1rem 0rem;
+    flex-wrap: wrap;
+  }
+}
 main #about .skills__over__container {
   background-color: #fff;
+}
+main #about .skills__over__container .underline {
+  width: 182px;
 }
 main #about .skills__over__container .skills__container .skill__content {
   padding: 1rem 4rem;
@@ -217,8 +305,46 @@ main #about .skills__over__container .skills__container .skill__content .skills 
 main #about .skills__over__container .skills__container .skill__content .skills .skills__skill:hover {
   background: rgba(153, 153, 153, 0.3);
 }
+@media screen and (max-width: 1280px) {
+  main #about .skills__over__container .skills__container .skill__content .skills {
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #about .skills__over__container .skills__container .skill__content .skills {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #about .skills__over__container .skills__container .skill__content .skills {
+    padding: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  main #about .skills__over__container .skills__container .skill__content .skills {
+    padding: 1rem 0rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #about .skills__over__container .skills__container .skill__content {
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #about .skills__over__container .skills__container .skill__content {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #about .skills__over__container .skills__container .skill__content {
+    padding: 1rem 1rem;
+  }
+}
 main #projects .projects__container {
   background-color: #fdfdfd;
+}
+main #projects .projects__container .underline {
+  width: 172px;
 }
 main #projects .projects__container .projects {
   padding: 2rem 7rem;
@@ -260,8 +386,38 @@ main #projects .projects__container .projects .projects__project .project__text 
 main #projects .projects__container .projects .projects__project:hover {
   transform: translateY(-5px);
 }
+@media screen and (max-width: 480px) {
+  main #projects .projects__container .projects .projects__project {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #projects .projects__container .projects {
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #projects .projects__container .projects {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #projects .projects__container .projects {
+    padding: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  main #projects .projects__container .projects {
+    padding: 1rem 0rem;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+main #certifications .certifications__container .underline {
+  width: 283px;
+}
 main #certifications .certifications__container .certifications__content {
-  padding: 2rem 7rem;
+  padding: 2rem 0;
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
@@ -282,8 +438,29 @@ main #certifications .certifications__container .certifications__content .certif
   width: 400px;
   border-radius: 10px;
 }
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .certifications__content .certificate a img {
+    width: 300px;
+    height: 200px;
+  }
+}
 main #certifications .certifications__container .certifications__content .certificate:hover {
   transform: translateY(-5px);
+}
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .certifications__content .certificate {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #certifications .certifications__container .certifications__content {
+    padding: 2rem 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .certifications__content {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  }
 }
 
 .footer__separator {
