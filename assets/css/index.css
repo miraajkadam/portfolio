@@ -197,12 +197,62 @@ main #about .about__content {
 main #about .about__content .underline {
   width: 202px;
 }
-main #about .left__container {
-  width: 70%;
-  padding: 3rem 4rem;
+main #about .inner__containers {
+  display: flex;
 }
-main #about .right__container {
-  width: 30%;
+main #about .inner__containers .left__container {
+  width: 55%;
+  padding: 3rem 4rem;
+  padding-right: 0;
+  line-height: 30px;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 768px) {
+  main #about .inner__containers .left__container {
+    padding-left: 2rem;
+  }
+}
+@media screen and (max-width: 645px) {
+  main #about .inner__containers .left__container {
+    padding-left: 2rem;
+    width: 80%;
+    padding-top: 0rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  main #about .inner__containers .left__container {
+    padding-left: 0rem;
+  }
+}
+main #about .inner__containers .right__container {
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+main #about .inner__containers .right__container .image__container {
+  display: inline-block;
+  height: 345px;
+}
+main #about .inner__containers .right__container .image__container img {
+  height: 345px;
+  -webkit-clip-path: circle(129px at 50% 50%);
+          clip-path: circle(129px at 50% 50%);
+}
+main #about .inner__containers .right__container .image__container .border__div {
+  height: 129px;
+}
+@media screen and (max-width: 645px) {
+  main #about .inner__containers .right__container {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 645px) {
+  main #about .inner__containers {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 }
 main #about .dev__toolkit__container {
   background-color: #fdfdfd;
@@ -221,6 +271,7 @@ main #about .dev__toolkit__container .toolkits .toolkit {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem 1rem;
 }
 main #about .dev__toolkit__container .toolkits .toolkit img {
   height: 5rem;
