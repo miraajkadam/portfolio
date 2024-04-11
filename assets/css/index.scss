@@ -55,6 +55,10 @@ a {
   color: inherit;
 }
 
+li {
+  list-style: none;
+}
+
 header {
   height: 70px;
   display: flex;
@@ -80,13 +84,67 @@ header {
     }
   }
 
-  .right__section {
+  .navbar {
+    .links {
+      display: flex;
+
+      li {
     a {
       margin: 0 15px;
       font-weight: 600;
 
       &:last-child {
         text-transform: uppercase;
+          }
+        }
+
+        @include break(xs) {
+          display: none;
+        }
+      }
+    }
+
+    .toggle__btn {
+      cursor: pointer;
+      display: none;
+
+      @include break(xs) {
+        display: block;
+      }
+    }
+
+    .dropdown__menu {
+      position: absolute;
+      right: 2rem;
+      top: 75px;
+      width: 160px;
+      background: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 0;
+      transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-weight: 600;
+      z-index: 2;
+
+      li {
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.open {
+        height: 186px;
+
+        @media screen and (min-width: 769px) {
+          height: 0;
+        }
+      }
+
+      @include break(xxs) {
+        width: unset;
+        left: 2rem;
       }
     }
   }
