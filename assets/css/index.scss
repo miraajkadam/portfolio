@@ -29,6 +29,25 @@ $black: #010101;
   font-size: 16px;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $yellow;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c99e10;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -89,12 +108,12 @@ header {
       display: flex;
 
       li {
-    a {
-      margin: 0 15px;
-      font-weight: 600;
+        a {
+          margin: 0 15px;
+          font-weight: 600;
 
-      &:last-child {
-        text-transform: uppercase;
+          &:last-child {
+            text-transform: uppercase;
           }
         }
 
