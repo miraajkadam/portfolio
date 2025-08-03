@@ -317,10 +317,11 @@ main {
   }
 
   #about {
-    .about__content {
-      background: #fbfbfb;
-      padding: 9rem 7rem;
+    .content__container {
+      background: #ffffff;
+    }
 
+    .about__content {
       .underline {
         width: 202px;
       }
@@ -456,8 +457,6 @@ main {
     }
 
     .skills__over__container {
-      background-color: #fff;
-
       .underline {
         width: 182px;
       }
@@ -525,9 +524,11 @@ main {
   }
 
   #projects {
-    .projects__container {
-      background-color: #fdfdfd;
+    .content__container {
+      background-color: #fcfcfc;
+    }
 
+    .projects__container {
       .underline {
         width: 172px;
       }

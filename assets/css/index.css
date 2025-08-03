@@ -265,9 +265,8 @@ main .content__container .underline {
     padding: 2rem 1rem !important;
   }
 }
-main #about .about__content {
-  background: #fbfbfb;
-  padding: 9rem 7rem;
+main #about .content__container {
+  background: #ffffff;
 }
 main #about .about__content .underline {
   width: 202px;
@@ -310,8 +309,7 @@ main #about .inner__containers .right__container .image__container {
 }
 main #about .inner__containers .right__container .image__container img {
   height: 345px;
-  -webkit-clip-path: circle(129px at 50% 50%);
-          clip-path: circle(129px at 50% 50%);
+  clip-path: circle(129px at 50% 50%);
 }
 main #about .inner__containers .right__container .image__container .border__div {
   height: 129px;
@@ -400,9 +398,6 @@ main #about .dev__toolkit__container .toolkits .toolkit sub {
     flex-wrap: wrap;
   }
 }
-main #about .skills__over__container {
-  background-color: #fff;
-}
 main #about .skills__over__container .underline {
   width: 182px;
 }
@@ -466,8 +461,8 @@ main #about .skills__over__container .skills__container .skill__content .skills 
     padding: 1rem 1rem;
   }
 }
-main #projects .projects__container {
-  background-color: #fdfdfd;
+main #projects .content__container {
+  background-color: #fcfcfc;
 }
 main #projects .projects__container .underline {
   width: 172px;
