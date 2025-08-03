@@ -327,9 +327,6 @@ main #about .inner__containers .right__container .image__container .border__div 
     align-items: center;
   }
 }
-main #about .dev__toolkit__container {
-  background-color: #fdfdfd;
-}
 main #about .dev__toolkit__container .underline {
   height: 4px;
   width: 300px;
