@@ -21,12 +21,48 @@ $breakpoints: (
 // Color palette
 $dark__grey: #292929;
 $grey: #585858;
+
 $yellow: #ffc715;
-$white: #fefefe;
 $black: #010101;
+
+$white__1: #ffffff;
+$white__2: #fefefe;
+$white__3: #fdfdfd;
+$white__4: #fcfcfc;
+$white__5: #fbfbfb;
+$white__6: #fafafa;
+
+$dark__1: #121212;
+$dark__2: #181818;
+$dark__3: #1e1e1e;
+$dark__4: #232323;
+$dark__5: #282828;
+$dark__6: #2e2e2e;
+
+$light__hero_gradiant: rgba(245, 245, 245, 0.85);
+$light__side_nav_box_shadow: rgba(100, 100, 111, 0.2);
+
+$dark__background: #121212; // Replacement for $white
+$dark__surface: #1e1e1e; // Optional layer for cards, modals, etc.
+$dark__text: #f5f5f5; // Replacement for $black
+$dark__grey: #b0b0b0; // Replacement for $grey
+$dark__grey--light: #e3e3e3; // Replacement for $dark__grey
+$dark__yellow: #ffdb55; // Softer yellow for better accessibility
+$dark__hero_gradiant: rgba(18, 18, 18, 0.85);
+
+$dark_mode__background: #121212;
+$dark_mode__text: #fff;
+
+$navbarbackgroun: #131313;
+$heroimage: #3c3f3c;
 
 :root {
   font-size: 16px;
+
+  --text-color: #{$black};
+  --background-global: #{$white__2};
+  --hero-gradient: #{$light__hero_gradiant};
+  --side-nav-box-shadow-colors: #{$light__side_nav_box_shadow};
 }
 
 ::-webkit-scrollbar {
@@ -55,8 +91,14 @@ $black: #010101;
 
 body {
   font-family: 'Poppins', 'Times New Roman', Times, serif;
-  color: $black;
-  background-color: $white;
+  color: var(--text-color);
+  background-color: var(--background-global);
+
+  &.darkmode {
+    --text-color: #{$dark__text};
+    --background-global: #{$dark__background};
+    --hero-gradient: #{$dark__hero_gradiant};
+  }
 }
 
 h2 {
@@ -173,17 +215,17 @@ header {
 
 main {
   #home {
-    background: linear-gradient(to right, rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)),
+    background: linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)),
       url('../img/background2.jpg');
     background-size: cover;
     height: calc(100vh - 70px);
 
     .side__nav {
-      background: #fff;
+      background: $white__1; // this
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+      box-shadow: var(--side-nav-box-shadow-colors) 0 7px 29px 0; // check
       border-radius: 3px;
 
       .socials {
@@ -523,7 +565,7 @@ main {
 
   #projects {
     .content__container {
-      background-color: #fcfcfc;
+      background-color: #fcfcfc; //here
     }
 
     .projects__container {
@@ -548,7 +590,7 @@ main {
           height: -webkit-fit-content;
           height: -moz-fit-content;
           height: fit-content;
-          box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3); // comoon
           border-radius: 10px;
           transition: transform 0.2s;
 
@@ -630,7 +672,7 @@ main {
           width: -moz-fit-content;
           width: fit-content;
           height: 267px;
-          box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3); // comoon
           border-radius: 10px;
           transition: transform 0.2s;
 
@@ -676,7 +718,7 @@ main {
 footer {
   background: $black;
   height: 200px;
-  color: $white;
+  color: $white__2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -719,7 +761,7 @@ footer {
 
   .dark__grey {
     background: $dark__grey;
-    color: $white;
+    color: $white__2;
   }
 
   .grey {
@@ -731,11 +773,41 @@ footer {
   }
 
   .white {
-    background: $white;
+    background: $white__2;
   }
 
   .black {
     background: $black;
+  }
+}
+
+.color__palette__dark {
+  div {
+    height: 200px;
+  }
+
+  .dark__background {
+    background: $dark__background;
+  }
+
+  .dark__surface {
+    background: $dark__surface;
+  }
+
+  .dark__text {
+    background: $dark__text;
+  }
+
+  .dark__grey {
+    background: $dark__grey;
+  }
+
+  .dark__grey--light {
+    background: $dark__grey--light;
+  }
+
+  .dark__yellow {
+    background: $dark__yellow;
   }
 }
 
