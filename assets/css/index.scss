@@ -40,7 +40,9 @@ $dark__5: #282828;
 $dark__6: #2e2e2e;
 
 $light__hero_gradiant: rgba(245, 245, 245, 0.85);
-$light__side_nav_box_shadow: rgba(100, 100, 111, 0.2);
+$light__side_nav_box_shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+$light__nav_background: $white__2;
+$light__image_filter: none;
 
 $dark__background: #121212; // Replacement for $white
 $dark__surface: #1e1e1e; // Optional layer for cards, modals, etc.
@@ -49,6 +51,9 @@ $dark__grey: #b0b0b0; // Replacement for $grey
 $dark__grey--light: #e3e3e3; // Replacement for $dark__grey
 $dark__yellow: #ffdb55; // Softer yellow for better accessibility
 $dark__hero_gradiant: rgba(18, 18, 18, 0.85);
+$dark__side_nav_box_shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
+$dark__nav_background: $dark__background;
+$dark__image_filter: invert(1);
 
 $dark_mode__background: #121212;
 $dark_mode__text: #fff;
@@ -62,7 +67,9 @@ $heroimage: #3c3f3c;
   --text-color: #{$black};
   --background-global: #{$white__2};
   --hero-gradient: #{$light__hero_gradiant};
-  --side-nav-box-shadow-colors: #{$light__side_nav_box_shadow};
+  --side-nav-box-shadow: #{$light__side_nav_box_shadow};
+  --nav-bg: #{$light__nav_background};
+  --img-filter: #{$light__image_filter};
 }
 
 ::-webkit-scrollbar {
@@ -98,6 +105,9 @@ body {
     --text-color: #{$dark__text};
     --background-global: #{$dark__background};
     --hero-gradient: #{$dark__hero_gradiant};
+    --side-nav-box-shadow: #{$dark__side_nav_box_shadow};
+    --nav-bg: #{$dark__nav_background};
+    --img-filter: #{$dark__image_filter};
   }
 }
 
@@ -221,12 +231,13 @@ main {
     height: calc(100vh - 70px);
 
     .side__nav {
-      background: $white__1; // this
+      background: var(--nav-bg);
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      box-shadow: var(--side-nav-box-shadow-colors) 0 7px 29px 0; // check
+      box-shadow: var(--side-nav-box-shadow);
       border-radius: 3px;
+      color: var(--text-color);
 
       .socials {
         width: 3.8rem;
@@ -242,10 +253,14 @@ main {
           padding: 0.1rem;
           position: relative;
           border-radius: 3px;
-          transition: background 0.3s;
+          transition: background 0.3s, filter 0.2s;
 
           &:hover {
             background: $yellow;
+
+            img {
+              filter: none;
+            }
           }
 
           img {
@@ -256,6 +271,7 @@ main {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            filter: var(--img-filter);
           }
         }
       }
@@ -302,7 +318,7 @@ main {
       .mouse {
         width: 25px;
         height: 40px;
-        border: 2px solid $black;
+        border: 2px solid var(--text-color);
         border-radius: 60px;
         position: relative;
         overflow: hidden;
@@ -315,7 +331,7 @@ main {
           top: 7px;
           left: 50%;
           transform: translateX(-50%);
-          background-color: $black;
+          background-color: var(--text-color);
           border-radius: 50%;
           opacity: 1;
           animation: wheel 1.3s infinite;

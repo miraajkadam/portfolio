@@ -1,5 +1,11 @@
 :root {
   font-size: 16px;
+  --text-color: #010101;
+  --background-global: #fefefe;
+  --hero-gradient: rgba(245, 245, 245, 0.85);
+  --side-nav-box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  --nav-bg: #fefefe;
+  --img-filter: none;
 }
 
 ::-webkit-scrollbar {
@@ -28,8 +34,16 @@
 
 body {
   font-family: "Poppins", "Times New Roman", Times, serif;
-  color: #010101;
-  background-color: #fefefe;
+  color: var(--text-color);
+  background-color: var(--background-global);
+}
+body.darkmode {
+  --text-color: #f5f5f5;
+  --background-global: #121212;
+  --hero-gradient: rgba(18, 18, 18, 0.85);
+  --side-nav-box-shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
+  --nav-bg: #121212;
+  --img-filter: invert(1);
 }
 
 h2 {
@@ -133,17 +147,18 @@ header .navbar .dropdown__menu.open {
 }
 
 main #home {
-  background: linear-gradient(to right, rgba(245, 245, 245, 0.85), rgba(245, 245, 245, 0.85)), url("../img/background2.jpg");
+  background: linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)), url("../img/background2.jpg");
   background-size: cover;
   height: calc(100vh - 70px);
 }
 main #home .side__nav {
-  background: #fff;
+  background: var(--nav-bg);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  box-shadow: var(--side-nav-box-shadow);
   border-radius: 3px;
+  color: var(--text-color);
 }
 main #home .side__nav .socials {
   width: 3.8rem;
@@ -159,10 +174,13 @@ main #home .side__nav .socials a {
   padding: 0.1rem;
   position: relative;
   border-radius: 3px;
-  transition: background 0.3s;
+  transition: background 0.3s, filter 0.2s;
 }
 main #home .side__nav .socials a:hover {
   background: #ffc715;
+}
+main #home .side__nav .socials a:hover img {
+  filter: none;
 }
 main #home .side__nav .socials a img {
   cursor: pointer;
@@ -172,6 +190,7 @@ main #home .side__nav .socials a img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: var(--img-filter);
 }
 @media screen and (max-width: 991px) {
   main #home .side__nav {
@@ -209,7 +228,7 @@ main #home .hero__mouse {
 main #home .hero__mouse .mouse {
   width: 25px;
   height: 40px;
-  border: 2px solid #010101;
+  border: 2px solid var(--text-color);
   border-radius: 60px;
   position: relative;
   overflow: hidden;
@@ -222,7 +241,7 @@ main #home .hero__mouse .mouse::before {
   top: 7px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #010101;
+  background-color: var(--text-color);
   border-radius: 50%;
   opacity: 1;
   animation: wheel 1.3s infinite;
@@ -623,7 +642,7 @@ footer .footer__sign {
   height: 200px;
 }
 .color__palette .dark__grey {
-  background: #292929;
+  background: #b0b0b0;
   color: #fefefe;
 }
 .color__palette .grey {
@@ -637,6 +656,28 @@ footer .footer__sign {
 }
 .color__palette .black {
   background: #010101;
+}
+
+.color__palette__dark div {
+  height: 200px;
+}
+.color__palette__dark .dark__background {
+  background: #121212;
+}
+.color__palette__dark .dark__surface {
+  background: #1e1e1e;
+}
+.color__palette__dark .dark__text {
+  background: #f5f5f5;
+}
+.color__palette__dark .dark__grey {
+  background: #b0b0b0;
+}
+.color__palette__dark .dark__grey--light {
+  background: #e3e3e3;
+}
+.color__palette__dark .dark__yellow {
+  background: #ffdb55;
 }
 @keyframes wheel {
   to {
