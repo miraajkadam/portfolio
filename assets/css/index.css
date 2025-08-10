@@ -6,10 +6,12 @@
   --side-nav-box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   --nav-bg: #fefefe;
   --img-filter: none;
-  --about-container-bg: #fcfcfc;
+  --cards-box-shadow: rgba(0, 0, 0, 0.3);
+  --about-container-bg: #ffffff;
   --skills-tablet-bg: rgba(153, 153, 153, 0.2);
   --skills-tablet-clr: #666;
   --skills-tablet-hover-bg: rgba(153, 153, 153, 0.3);
+  --projects-container-bg: #fcfcfc;
 }
 
 ::-webkit-scrollbar {
@@ -48,7 +50,9 @@ body.darkmode {
   --side-nav-box-shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
   --nav-bg: #121212;
   --img-filter: invert(1);
-  --about-container-bg: #232323;
+  --about-container-bg: #121212;
+  --cards-box-shadow: rgba(255, 255, 255, 0.1);
+  --projects-container-bg: #232323;
   --skills-tablet-bg: rgba(255, 255, 255, 0.1);
   --skills-tablet-clr: #b0b0b0;
   --skills-tablet-hover-bg: rgba(255, 255, 255, 0.15);
@@ -486,7 +490,7 @@ main #about .skills__over__container .skills__container .skill__content .skills 
   }
 }
 main #projects .content__container {
-  background-color: #fcfcfc;
+  background-color: var(--projects-container-bg);
 }
 main #projects .projects__container .underline {
   width: 172px;
@@ -499,12 +503,12 @@ main #projects .projects__container .projects {
 }
 main #projects .projects__container .projects .projects__project {
   cursor: pointer;
-  border: 1px solid;
+  border: 1px solid var(--about-container-bg);
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
   border-radius: 10px;
   transition: transform 0.2s;
 }

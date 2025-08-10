@@ -46,6 +46,7 @@ $light__image_filter: none;
 $light__skills_tablet_bg: rgba(153, 153, 153, 0.2);
 $light__skills_tablet_clr: #666;
 $light__skills_tablet_bg_hover: rgba(153, 153, 153, 0.3);
+$light__card_box_shadow: rgba(0, 0, 0, 0.3);
 
 $dark__background: #121212; // Replacement for $white
 $dark__surface: #1e1e1e; // Optional layer for cards, modals, etc.
@@ -61,12 +62,6 @@ $dark__skills_tablet_bg: rgba(255, 255, 255, 0.1);
 $dark__skills_tablet_clr: #b0b0b0;
 $dark__skills_tablet_bg_hover: rgba(255, 255, 255, 0.15);
 
-$dark_mode__background: #121212;
-$dark_mode__text: #fff;
-
-$navbarbackgroun: #131313;
-$heroimage: #3c3f3c;
-
 :root {
   font-size: 16px;
 
@@ -76,11 +71,12 @@ $heroimage: #3c3f3c;
   --side-nav-box-shadow: #{$light__side_nav_box_shadow};
   --nav-bg: #{$light__nav_background};
   --img-filter: #{$light__image_filter};
-  --about-container-bg: #{$white__4};
-
+  --cards-box-shadow: #{$light__card_box_shadow};
+  --about-container-bg: #{$white__1};
   --skills-tablet-bg: #{$light__skills_tablet_bg};
   --skills-tablet-clr: #{$light__skills_tablet_clr};
   --skills-tablet-hover-bg: #{$light__skills_tablet_bg_hover};
+  --projects-container-bg: #{$white__4};
 }
 
 ::-webkit-scrollbar {
@@ -119,8 +115,9 @@ body {
     --side-nav-box-shadow: #{$dark__side_nav_box_shadow};
     --nav-bg: #{$dark__nav_background};
     --img-filter: #{$dark__image_filter};
-    --about-container-bg: #{$dark__4};
-
+    --about-container-bg: #{$dark__1};
+    --cards-box-shadow: #{$dark__skills_tablet_bg};
+    --projects-container-bg: #{$dark__4};
     --skills-tablet-bg: #{$dark__skills_tablet_bg};
     --skills-tablet-clr: #{$dark__skills_tablet_clr};
     --skills-tablet-hover-bg: #{$dark__skills_tablet_bg_hover};
@@ -597,7 +594,7 @@ main {
 
   #projects {
     .content__container {
-      background-color: #fcfcfc; //here
+      background-color: var(--projects-container-bg);
     }
 
     .projects__container {
@@ -615,14 +612,14 @@ main {
 
         .projects__project {
           cursor: pointer;
-          border: 1px solid;
+          border: 1px solid var(--about-container-bg);
           width: -webkit-fit-content;
           width: -moz-fit-content;
           width: fit-content;
           height: -webkit-fit-content;
           height: -moz-fit-content;
           height: fit-content;
-          box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3); // comoon
+          box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
           border-radius: 10px;
           transition: transform 0.2s;
 
