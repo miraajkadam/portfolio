@@ -405,6 +405,9 @@ main #about .dev__toolkit__container .toolkits .toolkit sub {
     font-size: 0.6rem;
   }
 }
+main #about .dev__toolkit__container .toolkits .toolkit.github img {
+  filter: var(--img-filter);
+}
 @media screen and (max-width: 1280px) {
   main #about .dev__toolkit__container .toolkits {
     padding: 1rem 3rem;
@@ -503,7 +506,7 @@ main #projects .projects__container .projects {
 }
 main #projects .projects__container .projects .projects__project {
   cursor: pointer;
-  border: 1px solid var(--about-container-bg);
+  border: 1px solid #010101;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -574,7 +577,7 @@ main #certifications .certifications__container .certifications__content {
 }
 main #certifications .certifications__container .certifications__content .certificate {
   cursor: pointer;
-  border: 1px solid var(--about-container-bg);
+  border: 1px solid #010101;
   width: -moz-fit-content;
   width: fit-content;
   height: 267px;

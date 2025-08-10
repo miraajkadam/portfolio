@@ -501,6 +501,10 @@ main {
               font-size: 0.6rem;
             }
           }
+
+          &.github img {
+            filter: var(--img-filter);
+          }
         }
 
         @include break(md) {
@@ -612,7 +616,7 @@ main {
 
         .projects__project {
           cursor: pointer;
-          border: 1px solid var(--about-container-bg);
+          border: 1px solid $black;
           width: -webkit-fit-content;
           width: -moz-fit-content;
           width: fit-content;
@@ -696,7 +700,7 @@ main {
 
         .certificate {
           cursor: pointer;
-          border: 1px solid var(--about-container-bg);
+          border: 1px solid $black;
           width: -webkit-fit-content;
           width: -moz-fit-content;
           width: fit-content;
