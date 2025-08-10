@@ -574,11 +574,11 @@ main #certifications .certifications__container .certifications__content {
 }
 main #certifications .certifications__container .certifications__content .certificate {
   cursor: pointer;
-  border: 1px solid;
+  border: 1px solid var(--about-container-bg);
   width: -moz-fit-content;
   width: fit-content;
   height: 267px;
-  box-shadow: 0 10px 38px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
   border-radius: 10px;
   transition: transform 0.2s;
 }
