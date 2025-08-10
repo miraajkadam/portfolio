@@ -6,6 +6,10 @@
   --side-nav-box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   --nav-bg: #fefefe;
   --img-filter: none;
+  --about-container-bg: #fcfcfc;
+  --skills-tablet-bg: rgba(153, 153, 153, 0.2);
+  --skills-tablet-clr: #666;
+  --skills-tablet-hover-bg: rgba(153, 153, 153, 0.3);
 }
 
 ::-webkit-scrollbar {
@@ -44,6 +48,10 @@ body.darkmode {
   --side-nav-box-shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
   --nav-bg: #121212;
   --img-filter: invert(1);
+  --about-container-bg: #232323;
+  --skills-tablet-bg: rgba(255, 255, 255, 0.1);
+  --skills-tablet-clr: #b0b0b0;
+  --skills-tablet-hover-bg: rgba(255, 255, 255, 0.15);
 }
 
 h2 {
@@ -285,7 +293,7 @@ main .content__container .underline {
   }
 }
 main #about .content__container {
-  background: #ffffff;
+  background: var(--about-container-bg);
 }
 main #about .about__content .underline {
   width: 202px;
@@ -430,17 +438,17 @@ main #about .skills__over__container .skills__container .skill__content .skills 
   margin-bottom: 0.3rem;
   margin-right: 0.3rem;
   font-size: 0.7rem;
-  background: rgba(153, 153, 153, 0.2);
+  background: var(--skills-tablet-bg);
   border-radius: 5px;
   font-weight: 600;
-  color: #666;
+  color: var(--skills-tablet-clr);
   width: -moz-fit-content;
   width: fit-content;
   cursor: default;
   transition: background 0.001s;
 }
 main #about .skills__over__container .skills__container .skill__content .skills .skills__skill:hover {
-  background: rgba(153, 153, 153, 0.3);
+  background: var(--skills-tablet-hover-bg);
 }
 @media screen and (max-width: 1280px) {
   main #about .skills__over__container .skills__container .skill__content .skills {

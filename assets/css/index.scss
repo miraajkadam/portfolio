@@ -43,6 +43,9 @@ $light__hero_gradiant: rgba(245, 245, 245, 0.85);
 $light__side_nav_box_shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 $light__nav_background: $white__2;
 $light__image_filter: none;
+$light__skills_tablet_bg: rgba(153, 153, 153, 0.2);
+$light__skills_tablet_clr: #666;
+$light__skills_tablet_bg_hover: rgba(153, 153, 153, 0.3);
 
 $dark__background: #121212; // Replacement for $white
 $dark__surface: #1e1e1e; // Optional layer for cards, modals, etc.
@@ -54,6 +57,9 @@ $dark__hero_gradiant: rgba(18, 18, 18, 0.85);
 $dark__side_nav_box_shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
 $dark__nav_background: $dark__background;
 $dark__image_filter: invert(1);
+$dark__skills_tablet_bg: rgba(255, 255, 255, 0.1);
+$dark__skills_tablet_clr: #b0b0b0;
+$dark__skills_tablet_bg_hover: rgba(255, 255, 255, 0.15);
 
 $dark_mode__background: #121212;
 $dark_mode__text: #fff;
@@ -70,6 +76,11 @@ $heroimage: #3c3f3c;
   --side-nav-box-shadow: #{$light__side_nav_box_shadow};
   --nav-bg: #{$light__nav_background};
   --img-filter: #{$light__image_filter};
+  --about-container-bg: #{$white__4};
+
+  --skills-tablet-bg: #{$light__skills_tablet_bg};
+  --skills-tablet-clr: #{$light__skills_tablet_clr};
+  --skills-tablet-hover-bg: #{$light__skills_tablet_bg_hover};
 }
 
 ::-webkit-scrollbar {
@@ -108,6 +119,11 @@ body {
     --side-nav-box-shadow: #{$dark__side_nav_box_shadow};
     --nav-bg: #{$dark__nav_background};
     --img-filter: #{$dark__image_filter};
+    --about-container-bg: #{$dark__4};
+
+    --skills-tablet-bg: #{$dark__skills_tablet_bg};
+    --skills-tablet-clr: #{$dark__skills_tablet_clr};
+    --skills-tablet-hover-bg: #{$dark__skills_tablet_bg_hover};
   }
 }
 
@@ -376,7 +392,7 @@ main {
 
   #about {
     .content__container {
-      background: #ffffff;
+      background: var(--about-container-bg);
     }
 
     .about__content {
@@ -531,10 +547,10 @@ main {
               margin-bottom: 0.3rem;
               margin-right: 0.3rem;
               font-size: 0.7rem;
-              background: rgba(153, 153, 153, 0.2);
+              background: var(--skills-tablet-bg);
               border-radius: 5px;
               font-weight: 600;
-              color: #666;
+              color: var(--skills-tablet-clr);
               width: -webkit-fit-content;
               width: -moz-fit-content;
               width: fit-content;
@@ -542,7 +558,7 @@ main {
               transition: background 0.001s;
 
               &:hover {
-                background: rgba(153, 153, 153, 0.3);
+                background: var(--skills-tablet-hover-bg);
               }
             }
 
