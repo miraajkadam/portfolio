@@ -12,6 +12,7 @@
   --skills-tablet-clr: #666;
   --skills-tablet-hover-bg: rgba(153, 153, 153, 0.3);
   --projects-container-bg: #fcfcfc;
+  --darkmode-switch-bg: #181818;
 }
 
 ::-webkit-scrollbar {
@@ -56,6 +57,13 @@ body.darkmode {
   --skills-tablet-bg: rgba(255, 255, 255, 0.1);
   --skills-tablet-clr: #b0b0b0;
   --skills-tablet-hover-bg: rgba(255, 255, 255, 0.15);
+  --darkmode-switch-bg: #2e2e2e;
+}
+body.darkmode header .navbar button svg:first-child {
+  display: none;
+}
+body.darkmode header .navbar button svg:last-child {
+  display: block;
 }
 
 h2 {
@@ -84,7 +92,7 @@ header {
   justify-content: space-between;
 }
 header .header__common {
-  padding: 20px;
+  padding: 0 20px;
 }
 header .left__section {
   display: flex;
@@ -98,8 +106,36 @@ header .left__section img {
   border-radius: 50%;
   margin-right: 10px;
 }
+header .navbar {
+  display: flex;
+  align-items: center;
+}
+header .navbar button {
+  height: 35px;
+  width: 35px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--darkmode-switch-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+header .navbar button svg {
+  fill: #ffc715;
+  height: 24px;
+  width: 24px;
+}
+header .navbar button svg:first-child {
+  display: block;
+}
+header .navbar button svg:last-child {
+  display: none;
+}
 header .navbar .links {
   display: flex;
+  align-items: center;
 }
 header .navbar .links li a {
   margin: 0 15px;
@@ -116,6 +152,7 @@ header .navbar .links li a:last-child {
 header .navbar .toggle__btn {
   cursor: pointer;
   display: none;
+  margin: 0 15px;
 }
 @media screen and (max-width: 768px) {
   header .navbar .toggle__btn {

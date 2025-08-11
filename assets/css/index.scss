@@ -77,6 +77,7 @@ $dark__skills_tablet_bg_hover: rgba(255, 255, 255, 0.15);
   --skills-tablet-clr: #{$light__skills_tablet_clr};
   --skills-tablet-hover-bg: #{$light__skills_tablet_bg_hover};
   --projects-container-bg: #{$white__4};
+  --darkmode-switch-bg: #{$dark__2};
 }
 
 ::-webkit-scrollbar {
@@ -121,6 +122,16 @@ body {
     --skills-tablet-bg: #{$dark__skills_tablet_bg};
     --skills-tablet-clr: #{$dark__skills_tablet_clr};
     --skills-tablet-hover-bg: #{$dark__skills_tablet_bg_hover};
+    --darkmode-switch-bg: #{$dark__6};
+
+    header .navbar button {
+      svg:first-child {
+        display: none;
+      }
+      svg:last-child {
+        display: block;
+      }
+    }
   }
 }
 
@@ -150,7 +161,7 @@ header {
   justify-content: space-between;
 
   .header__common {
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .left__section {
@@ -169,8 +180,38 @@ header {
   }
 
   .navbar {
+    display: flex;
+    align-items: center;
+
+    button {
+      height: 35px;
+      width: 35px;
+      padding: 0;
+      border-radius: 50%;
+      background-color: var(--darkmode-switch-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        fill: #ffc715;
+        height: 24px;
+        width: 24px;
+
+        &:first-child {
+          display: block;
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+
     .links {
       display: flex;
+      align-items: center;
 
       li {
         a {
@@ -191,6 +232,7 @@ header {
     .toggle__btn {
       cursor: pointer;
       display: none;
+      margin: 0 15px;
 
       @include break(xs) {
         display: block;
