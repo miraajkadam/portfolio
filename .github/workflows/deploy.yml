@@ -1,4 +1,4 @@
-name: Minify and Deploy to gh-pages
+name: Minify to gh-pages
 
 on:
   push:
