@@ -1,16 +1,17 @@
-name: Minify and Deploy
+name: Minify and Deploy to gh-pages
 
 on:
   push:
     branches:
-      - main
+      - main # Change if your default branch is different
       - github-actions-minify-deploy
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code
+      # 1. Checkout source
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -24,36 +25,41 @@ jobs:
       - name: Install minifiers
         run: npm install -g html-minifier-terser terser clean-css-cli
 
-      # 4. Minify HTML
+      # 4. Copy files to dist/
+      - name: Copy source to dist
+        run: mkdir dist && rsync -av --exclude='dist' ./ dist/
+
+      # 5. Minify HTML in dist/
       - name: Minify HTML
         run: |
-          find . -type f -name "*.html" -exec sh -c '
+          find dist -type f -name "*.html" -exec sh -c '
             for file do
               html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true "$file" -o "$file"
             done
           ' sh {} +
 
-      # 5. Minify JS
+      # 6. Minify JS in dist/
       - name: Minify JS
         run: |
-          find . -type f -name "*.js" -exec sh -c '
+          find dist -type f -name "*.js" -exec sh -c '
             for file do
               terser "$file" -c -m -o "$file"
             done
           ' sh {} +
 
-      # 6. Minify CSS
+      # 7. Minify CSS in dist/
       - name: Minify CSS
         run: |
-          find . -type f -name "*.css" -exec sh -c '
+          find dist -type f -name "*.css" -exec sh -c '
             for file do
               cleancss -o "$file" "$file"
             done
           ' sh {} +
 
-      # # 7. Deploy to GitHub Pages
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./ # Your output directory (root in this case)
+      # 8. Deploy dist/ to gh-pages branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: dist
