@@ -3,33 +3,27 @@ name: Minify and Deploy to gh-pages
 on:
   push:
     branches:
-      - main # Change if your default branch is different
-      - github-actions-minify-deploy
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout source
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Install minifiers
       - name: Install minifiers
         run: npm install -g html-minifier-terser terser clean-css-cli
 
-      # 4. Copy files to dist/
       - name: Copy source to dist
         run: mkdir dist && rsync -av --exclude='dist' ./ dist/
 
-      # 5. Minify HTML in dist/
       - name: Minify HTML
         run: |
           find dist -type f -name "*.html" -exec sh -c '
@@ -38,7 +32,6 @@ jobs:
             done
           ' sh {} +
 
-      # 6. Minify JS in dist/
       - name: Minify JS
         run: |
           find dist -type f -name "*.js" -exec sh -c '
@@ -47,7 +40,6 @@ jobs:
             done
           ' sh {} +
 
-      # 7. Minify CSS in dist/
       - name: Minify CSS
         run: |
           find dist -type f -name "*.css" -exec sh -c '
@@ -56,7 +48,6 @@ jobs:
             done
           ' sh {} +
 
-      # 8. Deploy dist/ to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
