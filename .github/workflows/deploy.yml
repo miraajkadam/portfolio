@@ -1,0 +1,59 @@
+name: Minify and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - github-actions-minify-deploy
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Install minifiers
+      - name: Install minifiers
+        run: npm install -g html-minifier-terser terser clean-css-cli
+
+      # 4. Minify HTML
+      - name: Minify HTML
+        run: |
+          find . -type f -name "*.html" -exec sh -c '
+            for file do
+              html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true "$file" -o "$file"
+            done
+          ' sh {} +
+
+      # 5. Minify JS
+      - name: Minify JS
+        run: |
+          find . -type f -name "*.js" -exec sh -c '
+            for file do
+              terser "$file" -c -m -o "$file"
+            done
+          ' sh {} +
+
+      # 6. Minify CSS
+      - name: Minify CSS
+        run: |
+          find . -type f -name "*.css" -exec sh -c '
+            for file do
+              cleancss -o "$file" "$file"
+            done
+          ' sh {} +
+
+      # # 7. Deploy to GitHub Pages
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./ # Your output directory (root in this case)
