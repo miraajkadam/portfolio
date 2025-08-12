@@ -1,0 +1,23 @@
+{
+  "editor.formatOnSave": true,
+  "liveSassCompile.settings.compileOnWatch": true,
+  "liveSassCompile.settings.useNewCompiler": true,
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.autoprefix": true,
+  "liveSassCompile.settings.showOutputWindowOn": "Warning",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null,
+      "savePathReplacementPairs": null
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": null,
+      "savePathReplacementPairs": null,
+      "generateMap": null
+    }
+  ]
+}
