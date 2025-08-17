@@ -655,6 +655,8 @@ main {
         grid-gap: 30px;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         // grid-auto-rows: 20px;
+        justify-items: center;
+        align-items: center;
 
         .projects__project {
           cursor: pointer;
