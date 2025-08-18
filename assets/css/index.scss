@@ -40,7 +40,9 @@ $dark__5: #282828;
 $dark__6: #2e2e2e;
 
 $light__hero_gradiant: rgba(245, 245, 245, 0.85);
-$light__side_nav_box_shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+$light__side_nav_box_shadow: rgba(100, 100, 111, 0.2) 7px -7px 15px,
+  rgba(100, 100, 111, 0.2) 0 7px 29px;
+
 $light__nav_background: $white__2;
 $light__image_filter: none;
 $light__skills_tablet_bg: rgba(153, 153, 153, 0.2);
@@ -55,7 +57,8 @@ $dark__grey: #b0b0b0; // Replacement for $grey
 $dark__grey--light: #e3e3e3; // Replacement for $dark__grey
 $dark__yellow: #ffdb55; // Softer yellow for better accessibility
 $dark__hero_gradiant: rgba(18, 18, 18, 0.85);
-$dark__side_nav_box_shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
+$dark__side_nav_box_shadow: rgba(0, 0, 0, 0.4) 7px -7px 15px, rgba(0, 0, 0, 0.4) 0 6px 20px;
+
 $dark__nav_background: $dark__background;
 $dark__image_filter: invert(1);
 $dark__skills_tablet_bg: rgba(255, 255, 255, 0.1);
@@ -291,7 +294,7 @@ main {
       top: 50%;
       transform: translateY(-50%);
       box-shadow: var(--side-nav-box-shadow);
-      border-radius: 3px;
+      border-radius: 0 3px 3px 0;
       color: var(--text-color);
 
       .socials {
