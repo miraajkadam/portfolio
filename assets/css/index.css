@@ -3,7 +3,7 @@
   --text-color: #010101;
   --background-global: #fefefe;
   --hero-gradient: rgba(245, 245, 245, 0.85);
-  --side-nav-box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  --side-nav-box-shadow: rgba(100, 100, 111, 0.2) 7px -7px 15px, rgba(100, 100, 111, 0.2) 0 7px 29px;
   --nav-bg: #fefefe;
   --img-filter: none;
   --cards-box-shadow: rgba(0, 0, 0, 0.3);
@@ -48,7 +48,7 @@ body.darkmode {
   --text-color: #f5f5f5;
   --background-global: #121212;
   --hero-gradient: rgba(18, 18, 18, 0.85);
-  --side-nav-box-shadow: rgba(0, 0, 0, 0.4) 0 4px 16px, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
+  --side-nav-box-shadow: rgba(0, 0, 0, 0.4) 7px -7px 15px, rgba(0, 0, 0, 0.4) 0 6px 20px;
   --nav-bg: #121212;
   --img-filter: invert(1);
   --about-container-bg: #121212;
@@ -206,7 +206,7 @@ main #home .side__nav {
   top: 50%;
   transform: translateY(-50%);
   box-shadow: var(--side-nav-box-shadow);
-  border-radius: 3px;
+  border-radius: 0 3px 3px 0;
   color: var(--text-color);
 }
 main #home .side__nav .socials {
