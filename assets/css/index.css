@@ -681,11 +681,18 @@ footer .socials__icons .social__icon a {
   width: 25px;
   display: block;
 }
-footer .socials__icons .social__icon a svg {
+footer .socials__icons .social__icon a svg,
+footer .socials__icons .social__icon a img {
   height: 25px;
+}
+footer .socials__icons .social__icon a img {
+  filter: invert(1);
 }
 footer .socials__icons .social__icon:hover {
   color: #ffc715;
+}
+footer .socials__icons .social__icon:hover img {
+  filter: brightness(0) saturate(100%) invert(78%) sepia(95%) saturate(3220%) hue-rotate(2deg) brightness(104%) contrast(101%);
 }
 footer .footer__sign {
   margin-top: 5px;
