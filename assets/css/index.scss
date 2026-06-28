@@ -40,7 +40,8 @@ $dark__5: #282828;
 $dark__6: #2e2e2e;
 
 $light__hero_gradiant: rgba(245, 245, 245, 0.85);
-$light__side_nav_box_shadow: rgba(100, 100, 111, 0.2) 7px -7px 15px,
+$light__side_nav_box_shadow:
+  rgba(100, 100, 111, 0.2) 7px -7px 15px,
   rgba(100, 100, 111, 0.2) 0 7px 29px;
 
 $light__nav_background: $white__2;
@@ -57,7 +58,9 @@ $dark__grey: #b0b0b0; // Replacement for $grey
 $dark__grey--light: #e3e3e3; // Replacement for $dark__grey
 $dark__yellow: #ffdb55; // Softer yellow for better accessibility
 $dark__hero_gradiant: rgba(18, 18, 18, 0.85);
-$dark__side_nav_box_shadow: rgba(0, 0, 0, 0.4) 7px -7px 15px, rgba(0, 0, 0, 0.4) 0 6px 20px;
+$dark__side_nav_box_shadow:
+  rgba(0, 0, 0, 0.4) 7px -7px 15px,
+  rgba(0, 0, 0, 0.4) 0 6px 20px;
 
 $dark__nav_background: $dark__background;
 $dark__image_filter: invert(1);
@@ -283,7 +286,8 @@ header {
 
 main {
   #home {
-    background: linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)),
+    background:
+      linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)),
       url('../img/background2.jpg');
     background-size: cover;
     height: calc(100vh - 70px);
@@ -311,7 +315,9 @@ main {
           padding: 0.1rem;
           position: relative;
           border-radius: 3px;
-          transition: background 0.3s, filter 0.2s;
+          transition:
+            background 0.3s,
+            filter 0.2s;
 
           &:hover {
             background: $yellow;
@@ -818,13 +824,23 @@ footer {
         width: 25px;
         display: block;
 
-        svg {
+        svg,
+        img {
           height: 25px;
+        }
+
+        img {
+          filter: invert(1);
         }
       }
 
       &:hover {
         color: $yellow;
+
+        img {
+          filter: brightness(0) saturate(100%) invert(78%) sepia(95%) saturate(3220%)
+            hue-rotate(2deg) brightness(104%) contrast(101%);
+        }
       }
     }
   }
