@@ -606,22 +606,10 @@ main #projects .projects__container .projects .projects__project:hover {
 main #certifications .certifications__container .underline {
   width: 283px;
 }
-main #certifications .certifications__container .certifications__content {
-  padding: 2rem 0;
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
-  justify-content: center;
-}
 main #certifications .certifications__container .certifications__content .certificate {
-  cursor: pointer;
-  border: 1px solid #010101;
   width: -moz-fit-content;
   width: fit-content;
   height: 267px;
-  box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
-  border-radius: 10px;
-  transition: transform 0.2s;
 }
 main #certifications .certifications__container .certifications__content .certificate a img {
   height: 267px;
@@ -632,24 +620,6 @@ main #certifications .certifications__container .certifications__content .certif
   main #certifications .certifications__container .certifications__content .certificate a img {
     width: 300px;
     height: 200px;
-  }
-}
-main #certifications .certifications__container .certifications__content .certificate:hover {
-  transform: translateY(-5px);
-}
-@media screen and (max-width: 991px) {
-  main #certifications .certifications__container .certifications__content .certificate {
-    height: 200px;
-  }
-}
-@media screen and (max-width: 1280px) {
-  main #certifications .certifications__container .certifications__content {
-    padding: 2rem 0;
-  }
-}
-@media screen and (max-width: 991px) {
-  main #certifications .certifications__container .certifications__content {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   }
 }
 

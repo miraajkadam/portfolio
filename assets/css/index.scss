@@ -745,22 +745,22 @@ main {
       }
 
       .certifications__content {
-        padding: 2rem 0;
-        display: grid;
-        grid-gap: 30px;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
-        justify-content: center;
+        // padding: 2rem 0;
+        // display: grid;
+        // grid-gap: 30px;
+        // grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+        // justify-content: center;
 
         .certificate {
-          cursor: pointer;
-          border: 1px solid $black;
+          //   cursor: pointer;
+          //   border: 1px solid $black;
           width: -webkit-fit-content;
           width: -moz-fit-content;
           width: fit-content;
           height: 267px;
-          box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
-          border-radius: 10px;
-          transition: transform 0.2s;
+          //   box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
+          //   border-radius: 10px;
+          //   transition: transform 0.2s;
 
           a {
             img {
@@ -775,21 +775,21 @@ main {
             }
           }
 
-          &:hover {
-            transform: translateY(-5px);
-          }
+          //   &:hover {
+          //     transform: translateY(-5px);
+          //   }
 
-          @include break(sm) {
-            height: 200px;
-          }
-        }
+          //   @include break(sm) {
+          //     height: 200px;
+          //   }
+          // }
 
-        @include break(md) {
-          padding: 2rem 0;
-        }
+          // @include break(md) {
+          //   padding: 2rem 0;
+          // }
 
-        @include break(sm) {
-          grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+          // @include break(sm) {
+          //   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
         }
       }
     }
