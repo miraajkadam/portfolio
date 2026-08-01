@@ -750,30 +750,55 @@ main {
         // grid-gap: 30px;
         // grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
         // justify-content: center;
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scroll-padding: 0 20px;
+        padding: 10px 20px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
 
         .certificate {
           //   cursor: pointer;
-          //   border: 1px solid $black;
-          width: -webkit-fit-content;
-          width: -moz-fit-content;
+          border: 5px solid $black;
+          // flex: 0 0 calc(100% - 20%);
+          // max-width: calc(100% - 20%);
           width: fit-content;
-          height: 267px;
+          // min-height: 300px;
+          // height: 1000px;
+          // background-color: #3d3d3d;
+          border-radius: 10px;
+          // padding: 12px;
+          scroll-snap-align: center;
+          transition:
+            transform var(0.3s) var(ease-in-out),
+            box-shadow var(0.3s) var(ease-in-out);
+          display: flex;
+          flex-direction: column;
+          // gap: 12px;
+          // width: -webkit-fit-content;
+          // width: -moz-fit-content;
+          // width: fit-content;
+          // height: fit-content;
           //   box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
           //   border-radius: 10px;
           //   transition: transform 0.2s;
 
-          a {
-            img {
-              height: 267px;
-              width: 400px;
-              border-radius: 10px;
+          // a {
+          img {
+            height: 500px;
+            // flex: 0 0 85%;
+            // width: 85%;
+            border-radius: 10px;
 
-              @include break(sm) {
-                width: 300px;
-                height: 200px;
-              }
-            }
+            // @include break(sm) {
+            //   width: 300px;
+            //   height: 200px;
+            // }
           }
+          // }
 
           //   &:hover {
           //     transform: translateY(-5px);

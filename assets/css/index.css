@@ -606,21 +606,30 @@ main #projects .projects__container .projects .projects__project:hover {
 main #certifications .certifications__container .underline {
   width: 283px;
 }
+main #certifications .certifications__container .certifications__content {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: 0 20px;
+  padding: 10px 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
 main #certifications .certifications__container .certifications__content .certificate {
+  border: 5px solid #010101;
   width: -moz-fit-content;
   width: fit-content;
-  height: 267px;
-}
-main #certifications .certifications__container .certifications__content .certificate a img {
-  height: 267px;
-  width: 400px;
   border-radius: 10px;
+  scroll-snap-align: center;
+  transition: transform var(0.3s) var(ease-in-out), box-shadow var(0.3s) var(ease-in-out);
+  display: flex;
+  flex-direction: column;
 }
-@media screen and (max-width: 991px) {
-  main #certifications .certifications__container .certifications__content .certificate a img {
-    width: 300px;
-    height: 200px;
-  }
+main #certifications .certifications__container .certifications__content .certificate img {
+  height: 500px;
+  border-radius: 10px;
 }
 
 .footer__separator {
