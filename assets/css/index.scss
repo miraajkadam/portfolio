@@ -138,6 +138,22 @@ body {
         display: block;
       }
     }
+
+    #certifications {
+      .certifications__container {
+        .certifications_carousel {
+          .carousel-dots {
+            button {
+              background-color: $white__1;
+
+              &.active {
+                background-color: $yellow;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -781,15 +797,15 @@ main {
             flex-direction: column;
 
             a {
-            img {
+              img {
                 height: 600px;
-              border-radius: 10px;
+                border-radius: 10px;
 
-              // @include break(sm) {
-              //   width: 300px;
-              //   height: 200px;
-              // }
-            }
+                // @include break(sm) {
+                //   width: 300px;
+                //   height: 200px;
+                // }
+              }
             }
 
             &:hover {
