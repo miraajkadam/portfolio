@@ -640,36 +640,37 @@
           <h2>Certifications</h2>
           <div class="underline"></div>
 
-          <div class="certifications__content">
-            <div class="certificate">
-              <a
-                href="https://learn.microsoft.com/en-us/users/miraajkadam-0586/credentials/73eb21ffc037a20c"
-                target="_blank"
-                ><img
-                  data-src="assets/img/certificates/microsoft-ai-103.png"
-                  alt="microsoft-ai-103"
-                  class="lazyload"
-              /></a>
-            </div>
-            <div class="certificate">
-              <a
-                href="https://insidesherpa.s3.amazonaws.com/completion-certificates/JP%20Morgan/R5iK7HMxJGBgaSbvk_JPMorgan%20Chase_bJEDhM6WSuvjajW9p_completion_certificate.pdf"
-                target="_blank"
-                ><img
-                  data-src="assets/img/certificates/jpmc-virtual-experience.png"
-                  alt="jpmc-virtual-experience"
-                  class="lazyload"
-              /></a>
-            </div>
-            <div class="certificate">
-              <a href="https://www.hackerrank.com/certificates/1ad012aa5fef" target="_blank"
-                ><img
-                  data-src="assets/img/certificates/hackerrank-problem-solving-basic.png"
-                  alt="hackerrank-problem-solving-basic"
-                  class="lazyload"
-              /></a>
-            </div>
-            <!-- <div class="certificate">
+          <div class="certifications_carousel">
+            <div class="certifications__content">
+              <div class="certificate">
+                <a
+                  href="https://learn.microsoft.com/en-us/users/miraajkadam-0586/credentials/73eb21ffc037a20c"
+                  target="_blank"
+                  ><img
+                    data-src="assets/img/certificates/microsoft-ai-103.png"
+                    alt="microsoft-ai-103"
+                    class="lazyload"
+                /></a>
+              </div>
+              <div class="certificate">
+                <a
+                  href="https://insidesherpa.s3.amazonaws.com/completion-certificates/JP%20Morgan/R5iK7HMxJGBgaSbvk_JPMorgan%20Chase_bJEDhM6WSuvjajW9p_completion_certificate.pdf"
+                  target="_blank"
+                  ><img
+                    data-src="assets/img/certificates/jpmc-virtual-experience.png"
+                    alt="jpmc-virtual-experience"
+                    class="lazyload"
+                /></a>
+              </div>
+              <div class="certificate">
+                <a href="https://www.hackerrank.com/certificates/1ad012aa5fef" target="_blank"
+                  ><img
+                    data-src="assets/img/certificates/hackerrank-problem-solving-basic.png"
+                    alt="hackerrank-problem-solving-basic"
+                    class="lazyload"
+                /></a>
+              </div>
+              <!-- <div class="certificate">
               <a href="https://www.hackerrank.com/certificates/a12302763243" target="_blank"
                 ><img
                   data-src="assets/img/certificates/hackerrank-python-basic.png"
@@ -757,10 +758,28 @@
                   class="lazyload"
               /></a>
             </div> -->
-          </div>
+            </div>
 
-          <button>Previous</button>
-          <button>Next</button>
+            <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous certificate">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+
+            <button class="carousel-arrow carousel-arrow-next" aria-label="Next certificate">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,6 15,12 9,18"></polyline>
+              </svg>
+            </button>
+
+            <div class="carousel-dots" role="tablist" aria-label="Certifiate slide navigation">
+              <button role="tab" aria-selected="true" aria-label="certificate 1"></button>
+              <button role="tab" aria-selected="false" aria-label="certificate 2"></button>
+              <button role="tab" aria-selected="false" aria-label="certificate 3"></button>
+              <!-- <button role="tab" aria-selected="false" aria-label="certificate 4"></button>
+              <button role="tab" aria-selected="false" aria-label="certificate 5"></button> -->
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -606,7 +606,10 @@ main #projects .projects__container .projects .projects__project:hover {
 main #certifications .certifications__container .underline {
   width: 283px;
 }
-main #certifications .certifications__container .certifications__content {
+main #certifications .certifications__container .certifications_carousel {
+  position: relative;
+}
+main #certifications .certifications__container .certifications_carousel .certifications__content {
   display: flex;
   gap: 12px;
   overflow-x: auto;
@@ -617,19 +620,83 @@ main #certifications .certifications__container .certifications__content {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
-main #certifications .certifications__container .certifications__content .certificate {
-  border: 5px solid #010101;
+main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
+  cursor: pointer;
+  border: 1px solid #010101;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 10px;
+  height: 500px;
   scroll-snap-align: center;
-  transition: transform var(0.3s) var(ease-in-out), box-shadow var(0.3s) var(ease-in-out);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
 }
-main #certifications .certifications__container .certifications__content .certificate img {
+main #certifications .certifications__container .certifications_carousel .certifications__content .certificate img {
   height: 500px;
   border-radius: 10px;
+}
+main #certifications .certifications__container .certifications_carousel .certifications__content .certificate:hover {
+  transform: translateY(-5px);
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3d3d3d;
+  border: 2px solid #f5a623;
+  color: #f5a623;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color #f5a623 ease-in-out, color #f5a623 ease-in-out;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow.carousel-arrow-prev {
+  left: 0;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow.carousel-arrow-next {
+  right: 0;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #3d3d3d;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  padding: 0;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button.active {
+  background-color: #f5a623;
+  transform: scale(1.2);
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button:hover {
+  transform: scale(1.2);
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button:focus-visible {
+  outline: 2px solid #f5a623;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  main #certifications .certifications__container .certifications_carousel .carousel-dots button {
+    transition: none;
+  }
 }
 
 .footer__separator {
