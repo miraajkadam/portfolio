@@ -762,11 +762,35 @@ main {
 
       h2 {
         margin: 0 7rem;
+
+        @include break(md) {
+          margin: 0 5rem;
+        }
+
+        @include break(sm) {
+          margin: 0 3rem;
+        }
+
+        @include break(xs) {
+          margin: 0 1rem;
+        }
       }
 
       .underline {
         width: 283px;
         margin: 0 7rem 1rem 7rem;
+
+        @include break(md) {
+          margin: 0 5rem 1rem 5rem;
+        }
+
+        @include break(sm) {
+          margin: 0 3rem 1rem 3rem;
+        }
+
+        @include break(xs) {
+          margin: 0 1rem 1rem 1rem;
+        }
       }
 
       .certifications_carousel {
@@ -801,10 +825,13 @@ main {
                 height: 600px;
                 border-radius: 10px;
 
-                // @include break(sm) {
-                //   width: 300px;
-                //   height: 200px;
-                // }
+                @include break(sm) {
+                  height: 400px;
+                }
+
+                @include break(xs) {
+                  height: 200px;
+                }
               }
             }
 
@@ -812,17 +839,13 @@ main {
               transform: translateY(-5px);
             }
 
-            //   @include break(sm) {
-            //     height: 200px;
-            //   }
-            // }
+            @include break(sm) {
+              height: 400px;
+            }
 
-            // @include break(md) {
-            //   padding: 2rem 0;
-            // }
-
-            // @include break(sm) {
-            //   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+            @include break(xs) {
+              height: 200px;
+            }
           }
         }
 

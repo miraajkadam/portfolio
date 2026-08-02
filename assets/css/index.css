@@ -615,9 +615,39 @@ main #certifications .certifications__container.content__container {
 main #certifications .certifications__container h2 {
   margin: 0 7rem;
 }
+@media screen and (max-width: 1280px) {
+  main #certifications .certifications__container h2 {
+    margin: 0 5rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container h2 {
+    margin: 0 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container h2 {
+    margin: 0 1rem;
+  }
+}
 main #certifications .certifications__container .underline {
   width: 283px;
   margin: 0 7rem 1rem 7rem;
+}
+@media screen and (max-width: 1280px) {
+  main #certifications .certifications__container .underline {
+    margin: 0 5rem 1rem 5rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .underline {
+    margin: 0 3rem 1rem 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container .underline {
+    margin: 0 1rem 1rem 1rem;
+  }
 }
 main #certifications .certifications__container .certifications_carousel {
   position: relative;
@@ -649,8 +679,28 @@ main #certifications .certifications__container .certifications_carousel .certif
   height: 600px;
   border-radius: 10px;
 }
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate a img {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate a img {
+    height: 200px;
+  }
+}
 main #certifications .certifications__container .certifications_carousel .certifications__content .certificate:hover {
   transform: translateY(-5px);
+}
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
+    height: 200px;
+  }
 }
 main #certifications .certifications__container .certifications_carousel .carousel-arrow {
   position: absolute;
