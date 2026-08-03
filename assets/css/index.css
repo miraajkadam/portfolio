@@ -65,6 +65,12 @@ body.darkmode header .navbar button svg:first-child {
 body.darkmode header .navbar button svg:last-child {
   display: block;
 }
+body.darkmode #certifications .certifications__container .certifications_carousel .carousel-dots button {
+  background-color: #ffffff;
+}
+body.darkmode #certifications .certifications__container .certifications_carousel .carousel-dots button.active {
+  background-color: #ffc715;
+}
 
 h2 {
   font-size: 2.5rem;
@@ -603,53 +609,169 @@ main #projects .projects__container .projects .projects__project:hover {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
+main #certifications .certifications__container.content__container {
+  padding: 2rem 0 !important;
+}
+main #certifications .certifications__container h2 {
+  margin: 0 7rem;
+}
+@media screen and (max-width: 1280px) {
+  main #certifications .certifications__container h2 {
+    margin: 0 5rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container h2 {
+    margin: 0 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container h2 {
+    margin: 0 1rem;
+  }
+}
 main #certifications .certifications__container .underline {
   width: 283px;
+  margin: 0 7rem 1rem 7rem;
 }
-main #certifications .certifications__container .certifications__content {
-  padding: 2rem 0;
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
-  justify-content: center;
+@media screen and (max-width: 1280px) {
+  main #certifications .certifications__container .underline {
+    margin: 0 5rem 1rem 5rem;
+  }
 }
-main #certifications .certifications__container .certifications__content .certificate {
+@media screen and (max-width: 991px) {
+  main #certifications .certifications__container .underline {
+    margin: 0 3rem 1rem 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container .underline {
+    margin: 0 1rem 1rem 1rem;
+  }
+}
+main #certifications .certifications__container .certifications_carousel {
+  position: relative;
+}
+main #certifications .certifications__container .certifications_carousel .certifications__content {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: 0 20px;
+  padding: 10px 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
   cursor: pointer;
   border: 1px solid #010101;
   width: -moz-fit-content;
   width: fit-content;
-  height: 267px;
-  box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
   border-radius: 10px;
-  transition: transform 0.2s;
+  height: 600px;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
-main #certifications .certifications__container .certifications__content .certificate a img {
-  height: 267px;
-  width: 400px;
+main #certifications .certifications__container .certifications_carousel .certifications__content .certificate a img {
+  height: 600px;
   border-radius: 10px;
 }
 @media screen and (max-width: 991px) {
-  main #certifications .certifications__container .certifications__content .certificate a img {
-    width: 300px;
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate a img {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate a img {
     height: 200px;
   }
 }
-main #certifications .certifications__container .certifications__content .certificate:hover {
+main #certifications .certifications__container .certifications_carousel .certifications__content .certificate:hover {
   transform: translateY(-5px);
 }
 @media screen and (max-width: 991px) {
-  main #certifications .certifications__container .certifications__content .certificate {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
     height: 200px;
   }
 }
-@media screen and (max-width: 1280px) {
-  main #certifications .certifications__container .certifications__content {
-    padding: 2rem 0;
+main #certifications .certifications__container .certifications_carousel .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #010101;
+  border: 2px solid #ffc715;
+  color: #ffc715;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow.carousel-arrow-prev {
+  left: 3px;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow.carousel-arrow-next {
+  right: 3px;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow:hover {
+  background-color: #ffc715;
+  color: #010101;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-arrow:focus-visible {
+  outline: 3px solid #ffc715;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  main #certifications .certifications__container .certifications_carousel .carousel-arrow {
+    transition: none;
   }
 }
-@media screen and (max-width: 991px) {
-  main #certifications .certifications__container .certifications__content {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+main #certifications .certifications__container .certifications_carousel .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #010101;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  padding: 0;
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button.active {
+  background-color: #ffc715;
+  transform: scale(1.2);
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button:hover {
+  transform: scale(1.2);
+}
+main #certifications .certifications__container .certifications_carousel .carousel-dots button:focus-visible {
+  outline: 2px solid #ffc715;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  main #certifications .certifications__container .certifications_carousel .carousel-dots button {
+    transition: none;
   }
 }
 
