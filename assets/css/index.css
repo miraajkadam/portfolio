@@ -790,8 +790,9 @@ footer {
   flex-direction: column;
 }
 footer .socials__icons {
-  height: 35px;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 footer .socials__icons .social__icon {
   background: #010101;

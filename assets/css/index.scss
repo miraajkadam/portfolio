@@ -953,8 +953,9 @@ footer {
   flex-direction: column;
 
   .socials__icons {
-    height: 35px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     .social__icon {
       background: $black;
