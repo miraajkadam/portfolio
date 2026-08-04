@@ -550,7 +550,7 @@ main #projects .projects__container .projects {
 }
 main #projects .projects__container .projects .projects__project {
   cursor: pointer;
-  border: 1px solid #010101;
+  border: 1px solid #c0c0c2;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -665,7 +665,7 @@ main #certifications .certifications__container .certifications_carousel .certif
 }
 main #certifications .certifications__container .certifications_carousel .certifications__content .certificate {
   cursor: pointer;
-  border: 1px solid #010101;
+  border: 1px solid #c0c0c2;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 10px;

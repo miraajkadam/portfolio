@@ -68,6 +68,8 @@ $dark__skills_tablet_bg: rgba(255, 255, 255, 0.1);
 $dark__skills_tablet_clr: #b0b0b0;
 $dark__skills_tablet_bg_hover: rgba(255, 255, 255, 0.15);
 
+$border__grey: #c0c0c2;
+
 :root {
   font-size: 16px;
 
@@ -685,7 +687,7 @@ main {
 
         .projects__project {
           cursor: pointer;
-          border: 1px solid $black;
+          border: 1px solid $border__grey;
           width: -webkit-fit-content;
           width: -moz-fit-content;
           width: fit-content;
@@ -809,7 +811,7 @@ main {
 
           .certificate {
             cursor: pointer;
-            border: 1px solid $black;
+            border: 1px solid $border__grey;
             width: fit-content;
             border-radius: 10px;
             height: 600px;
