@@ -547,7 +547,6 @@ main #projects .projects__container .projects {
   align-items: center;
 }
 main #projects .projects__container .projects .projects__project {
-  cursor: pointer;
   border: 1px solid #c0c0c2;
   width: -moz-fit-content;
   width: fit-content;
@@ -568,16 +567,45 @@ main #projects .projects__container .projects .projects__project .project__img i
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+main #projects .projects__container .projects .projects__project .project__stack {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+}
+main #projects .projects__container .projects .projects__project .project__stack .project__stack-item {
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 0.7rem;
+  background: var(--skills-tablet-bg);
+  border-radius: 20px;
+  font-weight: 600;
+  color: var(--skills-tablet-clr);
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: default;
+  transition: background 0.001s;
+}
+main #projects .projects__container .projects .projects__project .project__stack .project__stack-item:hover {
+  background: var(--skills-tablet-hover-bg);
+}
 main #projects .projects__container .projects .projects__project .project__text {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   height: -moz-fit-content;
   height: fit-content;
 }
-main #projects .projects__container .projects .projects__project .project__text h6 {
+main #projects .projects__container .projects .projects__project .project__text .project__title-link {
+  display: flex;
+  justify-content: space-between;
+}
+main #projects .projects__container .projects .projects__project .project__text .project__title-link h6 {
   font-size: 0.9rem;
 }
+main #projects .projects__container .projects .projects__project .project__text .project__title-link svg {
+  height: 20px;
+}
 main #projects .projects__container .projects .projects__project:hover {
-  transform: translateY(-5px);
+  transform: scale(0.98);
 }
 @media screen and (max-width: 480px) {
   main #projects .projects__container .projects .projects__project {
