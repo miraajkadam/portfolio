@@ -49,7 +49,6 @@ $light__image_filter: none;
 $light__skills_tablet_bg: rgba(153, 153, 153, 0.2);
 $light__skills_tablet_clr: #666;
 $light__skills_tablet_bg_hover: rgba(153, 153, 153, 0.3);
-$light__card_box_shadow: rgba(0, 0, 0, 0.3);
 
 $dark__background: #121212; // Replacement for $white
 $dark__surface: #1e1e1e; // Optional layer for cards, modals, etc.
@@ -79,7 +78,6 @@ $border__grey: #c0c0c2;
   --side-nav-box-shadow: #{$light__side_nav_box_shadow};
   --nav-bg: #{$light__nav_background};
   --img-filter: #{$light__image_filter};
-  --cards-box-shadow: #{$light__card_box_shadow};
   --about-container-bg: #{$white__1};
   --skills-tablet-bg: #{$light__skills_tablet_bg};
   --skills-tablet-clr: #{$light__skills_tablet_clr};
@@ -125,7 +123,6 @@ body {
     --nav-bg: #{$dark__nav_background};
     --img-filter: #{$dark__image_filter};
     --about-container-bg: #{$dark__1};
-    --cards-box-shadow: #{$dark__skills_tablet_bg};
     --projects-container-bg: #{$dark__4};
     --skills-tablet-bg: #{$dark__skills_tablet_bg};
     --skills-tablet-clr: #{$dark__skills_tablet_clr};
@@ -694,7 +691,6 @@ main {
           height: -webkit-fit-content;
           height: -moz-fit-content;
           height: fit-content;
-          box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
           border-radius: 10px;
           transition: transform 0.2s;
 

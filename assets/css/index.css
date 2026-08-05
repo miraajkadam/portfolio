@@ -6,7 +6,6 @@
   --side-nav-box-shadow: rgba(100, 100, 111, 0.2) 7px -7px 15px, rgba(100, 100, 111, 0.2) 0 7px 29px;
   --nav-bg: #fefefe;
   --img-filter: none;
-  --cards-box-shadow: rgba(0, 0, 0, 0.3);
   --about-container-bg: #ffffff;
   --skills-tablet-bg: rgba(153, 153, 153, 0.2);
   --skills-tablet-clr: #666;
@@ -52,7 +51,6 @@ body.darkmode {
   --nav-bg: #121212;
   --img-filter: invert(1);
   --about-container-bg: #121212;
-  --cards-box-shadow: rgba(255, 255, 255, 0.1);
   --projects-container-bg: #232323;
   --skills-tablet-bg: rgba(255, 255, 255, 0.1);
   --skills-tablet-clr: #b0b0b0;
@@ -555,7 +553,6 @@ main #projects .projects__container .projects .projects__project {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0 10px 38px 0 var(--cards-box-shadow);
   border-radius: 10px;
   transition: transform 0.2s;
 }
