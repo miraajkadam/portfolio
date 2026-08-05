@@ -5,6 +5,7 @@ const darkModeToggle = document.getElementById('toggle-darkmode')
 const DARK_MODE_CLASS = 'darkmode'
 const presetDarkMode = localStorage.getItem(DARK_MODE_CLASS)
 const bdy = document.getElementsByTagName('body')[0]
+const showAllProjectsButton = document.querySelector('.projects__toggle')
 
 toggleBtn.addEventListener('click', () => {
   dropDownMenu.classList.toggle('open')
@@ -22,6 +23,21 @@ darkModeToggle.addEventListener('click', () => {
   } else {
     bdy.classList.add(DARK_MODE_CLASS)
     localStorage.setItem(DARK_MODE_CLASS, 'active')
+  }
+})
+
+showAllProjectsButton.addEventListener('click', () => {
+  const projectsVisible = document.querySelector('.projects__visible')
+  const projectsHidden = document.querySelector('.projects__hidden')
+
+  if (!projectsVisible || !projectsHidden) return
+
+  if (projectsVisible.style.display === 'none') {
+    projectsVisible.style.display = 'grid'
+    projectsHidden.style.display = 'none'
+  } else {
+    projectsVisible.style.display = 'none'
+    projectsHidden.style.display = 'grid'
   }
 })
 

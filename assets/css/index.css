@@ -538,7 +538,7 @@ main #projects .content__container {
 main #projects .projects__container .underline {
   width: 172px;
 }
-main #projects .projects__container .projects {
+main #projects .projects__container .projects__visible, main #projects .projects__container .projects__hidden {
   padding: 2rem 7rem;
   display: grid;
   grid-gap: 30px;
@@ -546,7 +546,7 @@ main #projects .projects__container .projects {
   justify-items: center;
   align-items: center;
 }
-main #projects .projects__container .projects .projects__project {
+main #projects .projects__container .projects__visible .projects__project, main #projects .projects__container .projects__hidden .projects__project {
   border: 1px solid #c0c0c2;
   width: -moz-fit-content;
   width: fit-content;
@@ -555,11 +555,11 @@ main #projects .projects__container .projects .projects__project {
   border-radius: 10px;
   transition: transform 0.2s;
 }
-main #projects .projects__container .projects .projects__project .project__img {
+main #projects .projects__container .projects__visible .projects__project .project__img, main #projects .projects__container .projects__hidden .projects__project .project__img {
   height: 200px;
   width: 100%;
 }
-main #projects .projects__container .projects .projects__project .project__img img {
+main #projects .projects__container .projects__visible .projects__project .project__img img, main #projects .projects__container .projects__hidden .projects__project .project__img img {
   width: inherit;
   height: inherit;
   -o-object-fit: cover;
@@ -567,12 +567,12 @@ main #projects .projects__container .projects .projects__project .project__img i
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-main #projects .projects__container .projects .projects__project .project__stack {
+main #projects .projects__container .projects__visible .projects__project .project__stack, main #projects .projects__container .projects__hidden .projects__project .project__stack {
   display: flex;
   flex-wrap: wrap;
   padding: 0.5rem 1rem;
 }
-main #projects .projects__container .projects .projects__project .project__stack .project__stack-item {
+main #projects .projects__container .projects__visible .projects__project .project__stack .project__stack-item, main #projects .projects__container .projects__hidden .projects__project .project__stack .project__stack-item {
   padding: 0.3rem 0.5rem;
   margin-bottom: 0.3rem;
   margin-right: 0.3rem;
@@ -586,53 +586,59 @@ main #projects .projects__container .projects .projects__project .project__stack
   cursor: default;
   transition: background 0.001s;
 }
-main #projects .projects__container .projects .projects__project .project__stack .project__stack-item:hover {
+main #projects .projects__container .projects__visible .projects__project .project__stack .project__stack-item:hover, main #projects .projects__container .projects__hidden .projects__project .project__stack .project__stack-item:hover {
   background: var(--skills-tablet-hover-bg);
 }
-main #projects .projects__container .projects .projects__project .project__text {
+main #projects .projects__container .projects__visible .projects__project .project__text, main #projects .projects__container .projects__hidden .projects__project .project__text {
   padding: 0 1rem 1rem 1rem;
   height: -moz-fit-content;
   height: fit-content;
 }
-main #projects .projects__container .projects .projects__project .project__text .project__title-link {
+main #projects .projects__container .projects__visible .projects__project .project__text .project__title-link, main #projects .projects__container .projects__hidden .projects__project .project__text .project__title-link {
   display: flex;
   justify-content: space-between;
 }
-main #projects .projects__container .projects .projects__project .project__text .project__title-link h6 {
+main #projects .projects__container .projects__visible .projects__project .project__text .project__title-link h6, main #projects .projects__container .projects__hidden .projects__project .project__text .project__title-link h6 {
   font-size: 0.9rem;
 }
-main #projects .projects__container .projects .projects__project .project__text .project__title-link svg {
+main #projects .projects__container .projects__visible .projects__project .project__text .project__title-link svg, main #projects .projects__container .projects__hidden .projects__project .project__text .project__title-link svg {
   height: 20px;
 }
-main #projects .projects__container .projects .projects__project:hover {
+main #projects .projects__container .projects__visible .projects__project:hover, main #projects .projects__container .projects__hidden .projects__project:hover {
   transform: scale(0.98);
 }
 @media screen and (max-width: 480px) {
-  main #projects .projects__container .projects .projects__project {
+  main #projects .projects__container .projects__visible .projects__project, main #projects .projects__container .projects__hidden .projects__project {
     width: 300px;
   }
 }
 @media screen and (max-width: 1280px) {
-  main #projects .projects__container .projects {
+  main #projects .projects__container .projects__visible, main #projects .projects__container .projects__hidden {
     padding: 1rem 3rem;
   }
 }
 @media screen and (max-width: 991px) {
-  main #projects .projects__container .projects {
+  main #projects .projects__container .projects__visible, main #projects .projects__container .projects__hidden {
     padding: 1rem 2rem;
   }
 }
 @media screen and (max-width: 768px) {
-  main #projects .projects__container .projects {
+  main #projects .projects__container .projects__visible, main #projects .projects__container .projects__hidden {
     padding: 1rem 1rem;
   }
 }
 @media screen and (max-width: 480px) {
-  main #projects .projects__container .projects {
+  main #projects .projects__container .projects__visible, main #projects .projects__container .projects__hidden {
     padding: 1rem 0rem;
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+}
+main #projects .projects__container .projects__visible {
+  display: visible;
+}
+main #projects .projects__container .projects__hidden {
+  display: none;
 }
 main #certifications .certifications__container.content__container {
   padding: 2rem 0 !important;
