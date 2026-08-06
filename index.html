@@ -299,6 +299,29 @@
 
           <div class="projects">
             <button class="projects__toggle">Show All</button>
+            <button class="project-toggle" id="projectToggle" type="button" aria-pressed="false">
+              <span class="project-toggle__text"> View All Projects </span>
+
+              <span class="project-toggle__knob" aria-hidden="true"> → </span>
+            </button>
+            <div class="toggle-group">
+              <input
+                type="checkbox"
+                name="on-off-switch"
+                id="on-off-switch"
+                checked=""
+                tabindex="1"
+              />
+              <label for="on-off-switch">
+                <span class="aural">Show:</span> Show Accessible Toggle Switch
+              </label>
+              <div class="onoffswitch pull-right" aria-hidden="true">
+                <div class="onoffswitch-label">
+                  <div class="onoffswitch-inner"></div>
+                  <div class="onoffswitch-switch"></div>
+                </div>
+              </div>
+            </div>
             <div class="projects__visible">
               <div class="projects__project">
                 <div class="project__img">

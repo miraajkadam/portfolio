@@ -152,3 +152,19 @@ const initializeCertificatesCarousel = () => {
 }
 
 initializeCertificatesCarousel()
+
+const toggle = document.getElementById('projectToggle')
+
+const text = toggle.querySelector('.project-toggle__text')
+
+let showingAllProjects = false
+
+toggle.addEventListener('click', () => {
+  showingAllProjects = !showingAllProjects
+
+  toggle.classList.toggle('project-toggle--all', showingAllProjects)
+
+  text.textContent = showingAllProjects ? 'View Highlighted' : 'View All Projects'
+
+  toggle.setAttribute('aria-pressed', showingAllProjects)
+})
