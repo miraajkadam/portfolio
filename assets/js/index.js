@@ -5,7 +5,6 @@ const darkModeToggle = document.getElementById('toggle-darkmode')
 const DARK_MODE_CLASS = 'darkmode'
 const presetDarkMode = localStorage.getItem(DARK_MODE_CLASS)
 const bdy = document.getElementsByTagName('body')[0]
-const showAllProjectsButton = document.querySelector('.projects__toggle')
 
 toggleBtn.addEventListener('click', () => {
   dropDownMenu.classList.toggle('open')
@@ -26,7 +25,16 @@ darkModeToggle.addEventListener('click', () => {
   }
 })
 
-showAllProjectsButton.addEventListener('click', () => {
+// #region Project Toggle
+
+const toggleText = document.querySelector('.toggle__text')
+
+const [highlightedProjects, allProjects] = toggleText.children
+
+toggleText.addEventListener('click', () => {
+  highlightedProjects.classList.toggle('active')
+  allProjects.classList.toggle('active')
+
   const projectsVisible = document.querySelector('.projects__visible')
   const projectsHidden = document.querySelector('.projects__hidden')
 
@@ -40,6 +48,10 @@ showAllProjectsButton.addEventListener('click', () => {
     projectsHidden.style.display = 'grid'
   }
 })
+
+// #endregion
+
+// #region Certificates Carousel
 
 const initializeCertificatesCarousel = () => {
   const carousel = document.querySelector('.certifications_carousel')
@@ -153,18 +165,4 @@ const initializeCertificatesCarousel = () => {
 
 initializeCertificatesCarousel()
 
-const toggle = document.getElementById('projectToggle')
-
-const text = toggle.querySelector('.project-toggle__text')
-
-let showingAllProjects = false
-
-toggle.addEventListener('click', () => {
-  showingAllProjects = !showingAllProjects
-
-  toggle.classList.toggle('project-toggle--all', showingAllProjects)
-
-  text.textContent = showingAllProjects ? 'View Highlighted' : 'View All Projects'
-
-  toggle.setAttribute('aria-pressed', showingAllProjects)
-})
+// #endregion

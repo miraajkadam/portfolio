@@ -671,90 +671,70 @@ main {
       .underline {
         width: 172px;
       }
+      .projects__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      .projects {
-        .project-toggle {
-          position: relative;
+        .projects__toggle {
+          display: flex;
+          align-items: stretch;
 
-          width: 230px;
-          height: 52px;
+          background: $yellow;
+          padding: 1px;
+          border-radius: 21px;
 
-          padding: 0 60px 0 20px;
-
-          border: 2px solid $yellow;
-          border-radius: 30px;
-
-          background-color: $black;
-          color: $yellow;
-
+          width: fit-content;
+          justify-content: center;
+          box-sizing: border-box;
           cursor: pointer;
-          overflow: hidden;
 
-          font-size: 0.85rem;
-          font-weight: 600;
-
-          &__text {
-            position: relative;
-            z-index: 1;
-
+          .toggle__text {
             display: flex;
             align-items: center;
-            justify-content: center;
 
-            width: 100%;
-            height: 100%;
+            background: $black;
+            color: $white__1;
+            padding: 0.5rem;
 
-            transition: transform 0.3s ease;
+            border-radius: 20px;
+
+            div {
+              display: none;
+            }
+
+            .active {
+              display: block;
+            }
           }
 
-          &__knob {
-            position: absolute;
-
-            top: 4px;
-            right: 4px;
-
-            width: 40px;
-            height: 40px;
-
+          .toggle__knob {
             display: flex;
             align-items: center;
             justify-content: center;
 
+            margin: 0 5px;
             border-radius: 50%;
 
-            background-color: $yellow;
-            color: $black;
-
-            font-size: 1.4rem;
-
-            transition:
-              right 0.3s ease,
-              transform 0.3s ease;
-          }
-
-          // View Highlighted state
-          &--all {
-            padding: 0 20px 0 60px;
-
-            .project-toggle__knob {
-              right: calc(100% - 44px);
-              transform: rotate(180deg);
+            svg {
+              font-size: 1.5rem;
+              color: $white__1;
             }
           }
 
-          &:focus-visible {
-            outline: 3px solid $yellow;
-            outline-offset: 3px;
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            &__text,
-            &__knob {
-              transition: none;
-            }
+          @include break(xs) {
+            align-self: flex-end;
           }
         }
 
+        @include break(xs) {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+      }
+
+      .projects {
         &__visible,
         &__hidden {
           padding: 2rem 7rem;
@@ -1237,192 +1217,3 @@ footer {
 //     width: 100%;
 //   }
 // }
-
-// body {
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-// }
-
-// COLORS
-$white: hsla(0, 0%, 100%, 1);
-$darkgray: hsla(0, 0%, 24%, 1);
-$base-gray: hsla(203, 15.8537%, 32.1569%, 1);
-$gray-saturate-85: saturate($base-gray, 85%);
-$button-blue: lighten($gray-saturate-85, 7%);
-
-// TRANSITION SPEEDS
-$transition-fast: 0.15s;
-
-// ON/OFF SWITCH
-$switch-height: 22px;
-$switch-width: 55px;
-$switch-group-height: $switch-height + 2px;
-$toggle-group-height: $switch-height + 5px;
-
-// MIXINS
-@mixin box-sizing($sizing: border-box) {
-  -moz-box-sizing: $sizing;
-  -webkit-box-sizing: $sizing;
-  box-sizing: $sizing;
-}
-
-@mixin transition($attr, $time, $ease) {
-  -webkit-transition: $attr $time $ease;
-  -o-transition: $attr $time $ease;
-  -moz-transition: $attr $time $ease;
-  transition: $attr $time $ease;
-}
-
-@mixin border-radius($radius: 4px) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-}
-
-/* ON/OFF Switch */
-.onoffswitch {
-  position: relative;
-  width: $switch-width;
-  display: inline-block;
-  font-size: 80%;
-
-  .onoffswitch-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid darken($white, 10%);
-
-    @include border-radius($switch-height - 2px);
-
-    margin: 0;
-  }
-
-  .onoffswitch-inner {
-    width: 200%;
-    margin-left: -100%;
-
-    @include transition(margin, $transition-fast, ease-in-out);
-
-    &:before,
-    &:after {
-      float: left;
-      width: 50%;
-      height: $switch-group-height;
-      padding: 0;
-      line-height: $switch-group-height;
-      font-size: 80%;
-      color: $white;
-      font-weight: normal;
-
-      @include box-sizing(border-box);
-    }
-
-    &:before {
-      content: 'Show Highlighted';
-      padding-left: 10px;
-      background-color: $button-blue;
-      color: $white;
-    }
-
-    &:after {
-      content: 'Show All Projects';
-      padding-right: 10px;
-      background-color: darken($white, 2%);
-      color: $darkgray;
-      text-align: right;
-    }
-  }
-
-  .onoffswitch-switch {
-    width: $switch-height;
-    height: $switch-height;
-    margin: 0;
-
-    background: $white;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-
-    @include border-radius(50%);
-
-    position: absolute;
-    top: 2px;
-    bottom: 0;
-    right: $switch-height + 13px;
-
-    @include transition(right, $transition-fast, ease-in-out);
-  }
-}
-
-.toggle-group {
-  position: relative;
-  height: $toggle-group-height;
-
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-  top: 50%;
-  left: 20px;
-
-  margin-top: -($toggle-group-height / 2);
-
-  input[type='checkbox'] {
-    position: absolute;
-    left: 10px;
-
-    &:checked ~ .onoffswitch {
-      .onoffswitch-label {
-        .onoffswitch-inner {
-          margin-left: 0;
-        }
-
-        .onoffswitch-switch {
-          right: 1px;
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-        }
-      }
-    }
-
-    &:focus ~ .onoffswitch {
-      outline: thin dotted #333;
-      outline: 0;
-    }
-  }
-
-  label {
-    position: absolute;
-
-    cursor: pointer;
-
-    padding-left: $switch-width + 10px;
-
-    display: inline-block;
-    text-align: left;
-
-    line-height: $switch-group-height;
-    width: 100%;
-    height: $switch-group-height;
-
-    z-index: 1;
-
-    font-weight: 200;
-  }
-}
-
-/* ==== Accessibility ===== */
-
-.aural {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-
-  &:focus {
-    clip: rect(0, 0, 0, 0);
-    font-size: 1em;
-    height: auto;
-    outline: thin dotted;
-    position: static !important;
-    width: auto;
-    overflow: visible;
-  }
-}

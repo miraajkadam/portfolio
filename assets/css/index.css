@@ -538,59 +538,58 @@ main #projects .content__container {
 main #projects .projects__container .underline {
   width: 172px;
 }
-main #projects .projects__container .projects .project-toggle {
-  position: relative;
-  width: 230px;
-  height: 52px;
-  padding: 0 60px 0 20px;
-  border: 2px solid #ffc715;
-  border-radius: 30px;
-  background-color: #010101;
-  color: #ffc715;
+main #projects .projects__container .projects__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main #projects .projects__container .projects__header .projects__toggle {
+  display: flex;
+  align-items: stretch;
+  background: #ffc715;
+  padding: 1px;
+  border-radius: 21px;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
+  box-sizing: border-box;
   cursor: pointer;
-  overflow: hidden;
-  font-size: 0.85rem;
-  font-weight: 600;
 }
-main #projects .projects__container .projects .project-toggle__text {
-  position: relative;
-  z-index: 1;
+main #projects .projects__container .projects__header .projects__toggle .toggle__text {
+  display: flex;
+  align-items: center;
+  background: #010101;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+main #projects .projects__container .projects__header .projects__toggle .toggle__text div {
+  display: none;
+}
+main #projects .projects__container .projects__header .projects__toggle .toggle__text .active {
+  display: block;
+}
+main #projects .projects__container .projects__header .projects__toggle .toggle__knob {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-main #projects .projects__container .projects .project-toggle__knob {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 5px;
   border-radius: 50%;
-  background-color: #ffc715;
-  color: #010101;
-  font-size: 1.4rem;
-  transition: right 0.3s ease, transform 0.3s ease;
 }
-main #projects .projects__container .projects .project-toggle--all {
-  padding: 0 20px 0 60px;
+main #projects .projects__container .projects__header .projects__toggle .toggle__knob svg {
+  font-size: 1.5rem;
+  color: #ffffff;
 }
-main #projects .projects__container .projects .project-toggle--all .project-toggle__knob {
-  right: calc(100% - 44px);
-  transform: rotate(180deg);
+@media screen and (max-width: 768px) {
+  main #projects .projects__container .projects__header .projects__toggle {
+    align-self: flex-end;
+  }
 }
-main #projects .projects__container .projects .project-toggle:focus-visible {
-  outline: 3px solid #ffc715;
-  outline-offset: 3px;
-}
-@media (prefers-reduced-motion: reduce) {
-  main #projects .projects__container .projects .project-toggle__text, main #projects .projects__container .projects .project-toggle__knob {
-    transition: none;
+@media screen and (max-width: 768px) {
+  main #projects .projects__container .projects__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
 main #projects .projects__container .projects__visible, main #projects .projects__container .projects__hidden {
@@ -952,115 +951,4 @@ footer .footer__sign {
     opacity: 0;
     top: 27px;
   }
-}
-/* ON/OFF Switch */
-.onoffswitch {
-  position: relative;
-  width: 55px;
-  display: inline-block;
-  font-size: 80%;
-}
-.onoffswitch .onoffswitch-label {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  border: 1px solid hsl(0, 0%, 90%);
-  border-radius: 20px;
-  margin: 0;
-}
-.onoffswitch .onoffswitch-inner {
-  width: 200%;
-  margin-left: -100%;
-  transition: margin 0.15s ease-in-out;
-}
-.onoffswitch .onoffswitch-inner:before, .onoffswitch .onoffswitch-inner:after {
-  float: left;
-  width: 50%;
-  height: 24px;
-  padding: 0;
-  line-height: 24px;
-  font-size: 80%;
-  color: hsl(0, 0%, 100%);
-  font-weight: normal;
-  box-sizing: border-box;
-}
-.onoffswitch .onoffswitch-inner:before {
-  content: "Show Highlighted";
-  padding-left: 10px;
-  background-color: hsl(203, 100%, 39.1569%);
-  color: hsl(0, 0%, 100%);
-}
-.onoffswitch .onoffswitch-inner:after {
-  content: "Show All Projects";
-  padding-right: 10px;
-  background-color: hsl(0, 0%, 98%);
-  color: hsl(0, 0%, 24%);
-  text-align: right;
-}
-.onoffswitch .onoffswitch-switch {
-  width: 22px;
-  height: 22px;
-  margin: 0;
-  background: hsl(0, 0%, 100%);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  position: absolute;
-  top: 2px;
-  bottom: 0;
-  right: 35px;
-  transition: right 0.15s ease-in-out;
-}
-
-.toggle-group {
-  position: relative;
-  height: 27px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  top: 50%;
-  left: 20px;
-  margin-top: -13.5px;
-}
-.toggle-group input[type=checkbox] {
-  position: absolute;
-  left: 10px;
-}
-.toggle-group input[type=checkbox]:checked ~ .onoffswitch .onoffswitch-label .onoffswitch-inner {
-  margin-left: 0;
-}
-.toggle-group input[type=checkbox]:checked ~ .onoffswitch .onoffswitch-label .onoffswitch-switch {
-  right: 1px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-}
-.toggle-group input[type=checkbox]:focus ~ .onoffswitch {
-  outline: thin dotted #333;
-  outline: 0;
-}
-.toggle-group label {
-  position: absolute;
-  cursor: pointer;
-  padding-left: 65px;
-  display: inline-block;
-  text-align: left;
-  line-height: 24px;
-  width: 100%;
-  height: 24px;
-  z-index: 1;
-  font-weight: 200;
-}
-
-/* ==== Accessibility ===== */
-.aural {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-}
-.aural:focus {
-  clip: rect(0, 0, 0, 0);
-  font-size: 1em;
-  height: auto;
-  outline: thin dotted;
-  position: static !important;
-  width: auto;
-  overflow: visible;
 }
