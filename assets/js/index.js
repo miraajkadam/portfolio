@@ -25,6 +25,34 @@ darkModeToggle.addEventListener('click', () => {
   }
 })
 
+// #region Project Toggle
+
+const toggleText = document.querySelector('.toggle__text')
+
+const [highlightedProjects, allProjects] = toggleText.children
+
+toggleText.addEventListener('click', () => {
+  highlightedProjects.classList.toggle('active')
+  allProjects.classList.toggle('active')
+
+  const projectsVisible = document.querySelector('.projects__visible')
+  const projectsHidden = document.querySelector('.projects__hidden')
+
+  if (!projectsVisible || !projectsHidden) return
+
+  if (projectsVisible.style.display === 'none') {
+    projectsVisible.style.display = 'grid'
+    projectsHidden.style.display = 'none'
+  } else {
+    projectsVisible.style.display = 'none'
+    projectsHidden.style.display = 'grid'
+  }
+})
+
+// #endregion
+
+// #region Certificates Carousel
+
 const initializeCertificatesCarousel = () => {
   const carousel = document.querySelector('.certifications_carousel')
   if (!carousel) return
@@ -136,3 +164,5 @@ const initializeCertificatesCarousel = () => {
 }
 
 initializeCertificatesCarousel()
+
+// #endregion
