@@ -598,7 +598,7 @@ main #projects .projects__container .projects__visible, main #projects .projects
   grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-items: center;
-  align-items: center;
+  align-items: flex-start;
 }
 main #projects .projects__container .projects__visible .projects__project, main #projects .projects__container .projects__hidden .projects__project {
   border: 1px solid #c0c0c2;
@@ -690,6 +690,18 @@ main #projects .projects__container .projects__visible .projects__project:hover,
 }
 main #projects .projects__container .projects__visible {
   display: visible;
+  grid-template-columns: repeat(4, minmax(0, 400px));
+  justify-content: center;
+}
+@media screen and (max-width: 1920px) {
+  main #projects .projects__container .projects__visible {
+    grid-template-columns: repeat(2, minmax(0, 400px));
+  }
+}
+@media screen and (max-width: 991px) {
+  main #projects .projects__container .projects__visible {
+    grid-template-columns: minmax(0, 400px);
+  }
 }
 main #projects .projects__container .projects__hidden {
   display: none;
